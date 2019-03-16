@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ENTITY % Dni "(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)">
+
+<!ENTITY % Miesiące "(01|02|03|04|05|06|07|08|09|10|11|12)">
+
+<!ENTITY % Waluta "(PLN|EUR|USD)">
+
+<!ENTITY % RodzajOkladki "(Miekka|Twarda)">
+
+<!ELEMENT Księgarnia (Autorzy, ListaKsiążek, ListaDziałów, Dział+)>
+
+<!ELEMENT Autorzy (AutorDokumentu*, OpisDokumentu)>
+<!ELEMENT AutorDokumentu (Imię, Nazwisko)>
+<!ATTLIST AutorDokumentu
+		  Indeks CDATA #REQUIRED>
+<!ELEMENT Imię (#PCDATA)>
+<!ELEMENT Nazwisko (#PCDATA)>
+<!ELEMENT OpisDokumentu (#PCDATA)>
+
+<!ELEMENT ListaKsiążek (Książka+)>
+<!ELEMENT Książka EMPTY>
+<!ATTLIST Książka
+		  Tytuł CDATA #REQUIRED
+		  AutorKsiążki CDATA #REQUIRED
+		  Identyfikator ID #REQUIRED>
+		  
+<!ELEMENT ListaDziałów (ZdefiniowanyDział*)>
+<!ELEMENT ZdefiniowanyDział EMPTY>
+<!ATTLIST ZdefiniowanyDział
+		  Nazwa CDATA #REQUIRED
+		  Id ID #REQUIRED>
+		  
+<!ELEMENT Dział (Egzemplarz*)>
+<!ATTLIST Dział IdDziału IDREF #REQUIRED>
+<!ELEMENT Egzemplarz (DataWydania, Cena, RodzajKsiążki)>
+<!ATTLIST Egzemplarz IdKsiążki IDREF #REQUIRED 
+                     AutorKsiążki CDATA #REQUIRED
+                     Tytuł CDATA #REQUIRED>
+<!ELEMENT DataWydania EMPTY>
+<!ATTLIST DataWydania Dzień %Dni; #IMPLIED
+					  Miesiąc %Miesiące; #IMPLIED
+					  Rok CDATA #REQUIRED>
+<!ELEMENT Cena (#PCDATA)>
+<!ATTLIST Cena Waluta %Waluta; #REQUIRED>
+<!ELEMENT RodzajKsiążki EMPTY>
+<!ATTLIST RodzajKsiążki Rodzaj %RodzajOkladki; #REQUIRED>
+ 
+		  

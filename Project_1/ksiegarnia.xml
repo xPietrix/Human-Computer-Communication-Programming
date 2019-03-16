@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="./ksiegarnia.css" type="text/css"?>
+<!DOCTYPE Księgarnia SYSTEM "ksiegarnia.dtd">
+
+<Księgarnia>
+	<OpisDokumentu> Dokument przedstawia zestawienie książek występujących w księgarni
+		<Autorzy>
+			<AutorDokumentu Indeks="210346">
+				<Imię>Piotr</Imię>
+				<Nazwisko>Wasiak</Nazwisko>
+			</AutorDokumentu>
+			<AutorDokumentu Indeks="210238">
+				<Imię>Mateusz</Imię>
+				<Nazwisko>Kubicki</Nazwisko>
+			</AutorDokumentu>
+		</Autorzy>
+	</OpisDokumentu>
+	
+	<ListaKsiążek>	
+		<Książka Tytuł="Harry Potter" AutorKsiążki="J. K. Rowling" Identyfikator="k1"/>
+		<Książka Tytuł="Malowany człowiek" AutorKsiążki="Peter Brett" Identyfikator="k2"/>
+		<Książka Tytuł="Eragon" AutorKsiążki="Christopher Paolini" Identyfikator="k3"/>
+		<Książka Tytuł="Gra o tron" AutorKsiążki="J. R. R. Martin" Identyfikator="k4"/>
+		<Książka Tytuł="Gildia magów" AutorKsiążki="Trudi Canavan" Identyfikator="k5"/>
+		<Książka Tytuł="Pierwszy śnieg" AutorKsiążki="Jo Nesbo" Identyfikator="k6"/>
+		<Książka Tytuł="Księżniczka z lodu" AutorKsiążki="Camilla Lackberg" Identyfikator="k7"/>
+		<Książka Tytuł="Umorzenie" AutorKsiążki="Remigiusz Mróz" Identyfikator="k8"/>
+		<Książka Tytuł="Pozwól mi wrócić" AutorKsiążki="B. A. Paris" Identyfikator="k9"/>
+		<Książka Tytuł="Ten dzień" AutorKsiążki="Blanka Lipińska" Identyfikator="k10"/>
+	
+		<Książka Tytuł="Srebrna zatoka" AutorKsiążki="Joyo Moyes" Identyfikator="k11"/>	
+		<Książka Tytuł="Winna" AutorKsiążki="Alicja Sinicka" Identyfikator="k12"/>
+		<Książka Tytuł="Cymanowski młyn" AutorKsiążki="Magdalena Witkiewicz" Identyfikator="k13"/>
+		<Książka Tytuł="Król bez skrupułów" AutorKsiążki="Meghan March" Identyfikator="k14"/>
+		<Książka Tytuł="Pacjentka" AutorKsiążki="Alex Michaleides" Identyfikator="k15"/>
+		<Książka Tytuł="Krzyżacy" AutorKsiążki="Henryk Sienkiewicz" Identyfikator="k16"/>
+		<Książka Tytuł="Trzej muszkieterowie" AutorKsiążki="Alexandre Dumas" Identyfikator="k17"/>
+		<Książka Tytuł="Ogród Afrodyty" AutorKsiążki="Ewa Stachniak" Identyfikator="k18"/>
+		<Książka Tytuł="Stara baśń" AutorKsiążki="Ignacy Kraszewski" Identyfikator="k19"/>
+		<Książka Tytuł="Hannibal. Wróg Rzymu" AutorKsiążki="Ben Kane" Identyfikator="k20"/>
+	</ListaKsiążek>
+	
+	<ListaDziałów>
+		<ZdefiniowanyDział Nazwa="Fantasy" Id="FN"/> 
+		<ZdefiniowanyDział Nazwa="Kryminały" Id="KR"/>
+		<ZdefiniowanyDział Nazwa="Obyczajowe" Id="OB"/>
+		<ZdefiniowanyDział Nazwa="Historyczne" Id="HI"/>
+	</ListaDziałów>
+	
+	<Dział IdDziału="FN">
+		<Egzemplarz IdKsiążki="k1" AutorKsiążki="J. K. Rowling" Tytuł="Harry Potter">
+			<DataWydania Dzień="01" Miesiąc="01" Rok="1991"/>
+			<Cena Waluta="PLN"> 12 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k2" AutorKsiążki="Peter Brett" Tytuł="Malowany człowiek">
+			<DataWydania Dzień="02" Miesiąc="02" Rok="1992"/>
+			<Cena Waluta="EUR"> 10 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k3" AutorKsiążki="Christopher Paolini" Tytuł="Eragon">
+			<DataWydania Dzień="03" Miesiąc="03" Rok="1993"/>
+			<Cena Waluta="PLN"> 11 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k4" AutorKsiążki="J. R. R. Martin" Tytuł="Gra o tron">
+			<DataWydania Dzień="04" Miesiąc="04" Rok="1994"/>
+			<Cena Waluta="USD"> 12 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k5" AutorKsiążki="Trudi Canavan" Tytuł="Gildia magów">
+			<DataWydania Dzień="05" Miesiąc="05" Rok="1995"/>
+			<Cena Waluta="EUR"> 14 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+	</Dział>
+	
+	<Dział IdDziału="KR">
+		<Egzemplarz IdKsiążki="k6" AutorKsiążki="Jo Nesbo" Tytuł="Pierwszy śnieg">
+			<DataWydania Dzień="06" Miesiąc="06" Rok="1996"/>
+			<Cena Waluta="EUR"> 16 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k7" AutorKsiążki="Camilla Lackberg" Tytuł="Księżniczka z lodu">
+			<DataWydania Dzień="07" Miesiąc="07" Rok="1997"/>
+			<Cena Waluta="USD"> 5 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k8" AutorKsiążki="Remigiusz Mróz" Tytuł="Umorzenie">
+			<DataWydania Dzień="08" Miesiąc="08" Rok="1998"/>
+			<Cena Waluta="EUR"> 8 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k9" AutorKsiążki="B. A. Paris" Tytuł="Pozwól mi wrócić">
+			<DataWydania Dzień="09" Miesiąc="09" Rok="1999"/>
+			<Cena Waluta="PLN"> 9 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k10" AutorKsiążki="Blanka Lipińska" Tytuł="Ten dzień">
+			<DataWydania Dzień="10" Miesiąc="10" Rok="2000"/>
+			<Cena Waluta="EUR"> 10 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+	</Dział>
+	
+	<Dział IdDziału="OB">
+		<Egzemplarz IdKsiążki="k11" AutorKsiążki="Joyo Moyes" Tytuł="Srebrna zatoka">
+			<DataWydania Dzień="11" Miesiąc="11" Rok="2001"/>
+			<Cena Waluta="USD"> 11 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k12" AutorKsiążki="Alicja Sinicka" Tytuł="Winna">
+			<DataWydania Dzień="12" Miesiąc="12" Rok="2002"/>
+			<Cena Waluta="PLN"> 12 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k13" AutorKsiążki="Magdalena Witkiewicz" Tytuł="Cymanowski młyn">
+			<DataWydania Dzień="13" Miesiąc="01" Rok="2003"/>
+			<Cena Waluta="PLN"> 23 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k14" AutorKsiążki="Meghan March" Tytuł="Król bez skrupułów">
+			<DataWydania Dzień="14" Miesiąc="02" Rok="2004"/>
+			<Cena Waluta="USD"> 5 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k15" AutorKsiążki="Alex Michaleides" Tytuł="Pacjentka">
+			<DataWydania Dzień="15" Miesiąc="03" Rok="2005"/>
+			<Cena Waluta="PLN"> 25 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+	</Dział>
+	
+	<Dział IdDziału="HI">
+		<Egzemplarz IdKsiążki="k16" AutorKsiążki="Henryk Sienkiewicz" Tytuł="Krzyżacy">
+			<DataWydania Dzień="16" Miesiąc="04" Rok="2006"/>
+			<Cena Waluta="EUR"> 16 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k17" AutorKsiążki="Alexandre Dumas" Tytuł="Trzej muszkieterowie">
+			<DataWydania Dzień="17" Miesiąc="05" Rok="2007"/>
+			<Cena Waluta="USD"> 17 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k18" AutorKsiążki="Ewa Stachniak" Tytuł="Ogród Afrodyty">
+			<DataWydania Dzień="18" Miesiąc="06" Rok="2008"/>
+			<Cena Waluta="PLN"> 28 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k19" AutorKsiążki="Ignacy Kraszewski" Tytuł="Stara baśń">
+			<DataWydania Dzień="19" Miesiąc="07" Rok="2009"/>
+			<Cena Waluta="EUR"> 29 </Cena>
+			<RodzajKsiążki Rodzaj="Twarda"/>
+		</Egzemplarz>
+		<Egzemplarz IdKsiążki="k20" AutorKsiążki="Ben Kane" Tytuł="Hannibal. Wróg Rzymu">
+			<DataWydania Dzień="20" Miesiąc="08" Rok="2010"/>
+			<Cena Waluta="PLN"> 30 </Cena>
+			<RodzajKsiążki Rodzaj="Miękka"/>
+		</Egzemplarz>
+	</Dział>
+	
+</Księgarnia>
