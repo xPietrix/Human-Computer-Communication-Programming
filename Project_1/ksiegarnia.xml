@@ -88,7 +88,7 @@
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k8" AutorKsiążki="Remigiusz Mróz" Tytuł="Umorzenie">
 			<DataWydania Dzień="08" Miesiąc="08" Rok="1998"/>
-			<Cena Waluta="EUR"> 8,00 </Cena>
+			<Cena Waluta="EUR"> 8,69 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k9" AutorKsiążki="B. A. Paris" Tytuł="Pozwól mi wrócić">
