@@ -30,7 +30,7 @@
 	
 		<Książka Tytuł="Srebrna zatoka" AutorKsiążki="Joyo Moyes" Identyfikator="k11"/>	
 		<Książka Tytuł="Winna" AutorKsiążki="Alicja Sinicka" Identyfikator="k12"/>
-		<Książka Tytuł="Cymanowski młyn" AutorKsiążki="Magdalena Witkiewicz" Identyfikator="k13"/>
+		<Książka Tytuł="Pościg" AutorKsiążki="Kennedy Elle" Identyfikator="k13"/>
 		<Książka Tytuł="Król bez skrupułów" AutorKsiążki="Meghan March" Identyfikator="k14"/>
 		<Książka Tytuł="Pacjentka" AutorKsiążki="Alex Michaleides" Identyfikator="k15"/>
 		<Książka Tytuł="Krzyżacy" AutorKsiążki="Henryk Sienkiewicz" Identyfikator="k16"/>
@@ -114,7 +114,7 @@
 			<Cena Waluta="PLN"> 12 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
-		<Egzemplarz IdKsiążki="k13" AutorKsiążki="Magdalena Witkiewicz" Tytuł="Cymanowski młyn">
+		<Egzemplarz IdKsiążki="k13" AutorKsiążki="Kennedy Elle" Tytuł="Pościg">
 			<DataWydania Dzień="13" Miesiąc="01" Rok="2003"/>
 			<Cena Waluta="PLN"> 23 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
