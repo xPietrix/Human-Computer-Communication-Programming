@@ -50,27 +50,27 @@
 	<Dział IdDziału="FN">
 		<Egzemplarz IdKsiążki="k1" AutorKsiążki="J. K. Rowling" Tytuł="Harry Potter">
 			<DataWydania Dzień="01" Miesiąc="01" Rok="1991"/>
-			<Cena Waluta="PLN"> 12 </Cena>
+			<Cena Waluta="PLN"> 12,99 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k2" AutorKsiążki="Peter Brett" Tytuł="Malowany człowiek">
 			<DataWydania Dzień="02" Miesiąc="02" Rok="1992"/>
-			<Cena Waluta="EUR"> 10 </Cena>
+			<Cena Waluta="EUR"> 10,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k3" AutorKsiążki="Christopher Paolini" Tytuł="Eragon">
 			<DataWydania Dzień="03" Miesiąc="03" Rok="1993"/>
-			<Cena Waluta="PLN"> 11 </Cena>
+			<Cena Waluta="PLN"> 11,11 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k4" AutorKsiążki="J. R. R. Martin" Tytuł="Gra o tron">
 			<DataWydania Dzień="04" Miesiąc="04" Rok="1994"/>
-			<Cena Waluta="USD"> 12 </Cena>
+			<Cena Waluta="USD"> 12,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k5" AutorKsiążki="Trudi Canavan" Tytuł="Gildia magów">
 			<DataWydania Dzień="05" Miesiąc="05" Rok="1995"/>
-			<Cena Waluta="EUR"> 14 </Cena>
+			<Cena Waluta="EUR"> 14,63 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 	</Dział>
@@ -78,27 +78,27 @@
 	<Dział IdDziału="KR">
 		<Egzemplarz IdKsiążki="k6" AutorKsiążki="Jo Nesbo" Tytuł="Pierwszy śnieg">
 			<DataWydania Dzień="06" Miesiąc="06" Rok="1996"/>
-			<Cena Waluta="EUR"> 16 </Cena>
+			<Cena Waluta="EUR"> 16,99 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k7" AutorKsiążki="Camilla Lackberg" Tytuł="Księżniczka z lodu">
 			<DataWydania Dzień="07" Miesiąc="07" Rok="1997"/>
-			<Cena Waluta="USD"> 5 </Cena>
+			<Cena Waluta="USD"> 5,00 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k8" AutorKsiążki="Remigiusz Mróz" Tytuł="Umorzenie">
 			<DataWydania Dzień="08" Miesiąc="08" Rok="1998"/>
-			<Cena Waluta="EUR"> 8 </Cena>
+			<Cena Waluta="EUR"> 8,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k9" AutorKsiążki="B. A. Paris" Tytuł="Pozwól mi wrócić">
 			<DataWydania Dzień="09" Miesiąc="09" Rok="1999"/>
-			<Cena Waluta="PLN"> 9 </Cena>
+			<Cena Waluta="PLN"> 9,59 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k10" AutorKsiążki="Blanka Lipińska" Tytuł="Ten dzień">
 			<DataWydania Dzień="10" Miesiąc="10" Rok="2000"/>
-			<Cena Waluta="EUR"> 10 </Cena>
+			<Cena Waluta="EUR"> 10,00 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 	</Dział>
@@ -106,7 +106,7 @@
 	<Dział IdDziału="OB">
 		<Egzemplarz IdKsiążki="k11" AutorKsiążki="Joyo Moyes" Tytuł="Srebrna zatoka">
 			<DataWydania Dzień="11" Miesiąc="11" Rok="2001"/>
-			<Cena Waluta="USD"> 11 </Cena>
+			<Cena Waluta="USD"> 11,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k12" AutorKsiążki="Alicja Sinicka" Tytuł="Winna">
@@ -116,17 +116,17 @@
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k13" AutorKsiążki="Kennedy Elle" Tytuł="Pościg">
 			<DataWydania Dzień="13" Miesiąc="01" Rok="2003"/>
-			<Cena Waluta="PLN"> 23 </Cena>
+			<Cena Waluta="PLN"> 23,00 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k14" AutorKsiążki="Meghan March" Tytuł="Król bez skrupułów">
 			<DataWydania Dzień="14" Miesiąc="02" Rok="2004"/>
-			<Cena Waluta="USD"> 5 </Cena>
+			<Cena Waluta="USD"> 5,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k15" AutorKsiążki="Alex Michaleides" Tytuł="Pacjentka">
 			<DataWydania Dzień="15" Miesiąc="03" Rok="2005"/>
-			<Cena Waluta="PLN"> 25 </Cena>
+			<Cena Waluta="PLN"> 25,99 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 	</Dział>
@@ -134,27 +134,27 @@
 	<Dział IdDziału="HI">
 		<Egzemplarz IdKsiążki="k16" AutorKsiążki="Henryk Sienkiewicz" Tytuł="Krzyżacy">
 			<DataWydania Dzień="16" Miesiąc="04" Rok="2006"/>
-			<Cena Waluta="EUR"> 16 </Cena>
+			<Cena Waluta="EUR"> 16,00 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k17" AutorKsiążki="Alexandre Dumas" Tytuł="Trzej muszkieterowie">
 			<DataWydania Dzień="17" Miesiąc="05" Rok="2007"/>
-			<Cena Waluta="USD"> 17 </Cena>
+			<Cena Waluta="USD"> 17,00 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k18" AutorKsiążki="Ewa Stachniak" Tytuł="Ogród Afrodyty">
 			<DataWydania Dzień="18" Miesiąc="06" Rok="2008"/>
-			<Cena Waluta="PLN"> 28 </Cena>
+			<Cena Waluta="PLN"> 28,77 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k19" AutorKsiążki="Ignacy Kraszewski" Tytuł="Stara baśń">
 			<DataWydania Dzień="19" Miesiąc="07" Rok="2009"/>
-			<Cena Waluta="EUR"> 29 </Cena>
+			<Cena Waluta="EUR"> 29,00 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k20" AutorKsiążki="Ben Kane" Tytuł="Hannibal. Wróg Rzymu">
 			<DataWydania Dzień="20" Miesiąc="08" Rok="2010"/>
-			<Cena Waluta="PLN"> 30 </Cena>
+			<Cena Waluta="PLN"> 30,89 </Cena>
 			<RodzajKsiążki Rodzaj="Miękka"/>
 		</Egzemplarz>
 	</Dział>
