@@ -111,7 +111,7 @@
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k12" AutorKsiążki="Alicja Sinicka" Tytuł="Winna">
 			<DataWydania Dzień="12" Miesiąc="12" Rok="2002"/>
-			<Cena Waluta="PLN"> 12 </Cena>
+			<Cena Waluta="PLN"> 12,99 </Cena>
 			<RodzajKsiążki Rodzaj="Twarda"/>
 		</Egzemplarz>
 		<Egzemplarz IdKsiążki="k13" AutorKsiążki="Kennedy Elle" Tytuł="Pościg">
