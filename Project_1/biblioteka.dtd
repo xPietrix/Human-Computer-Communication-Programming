@@ -8,7 +8,7 @@
 
 <!ENTITY % RodzajOkladki "(Miekka|Twarda)">
 
-<!ELEMENT Księgarnia (Autorzy, ListaKsiążek, ListaDziałów, Dział+)>
+<!ELEMENT Biblioteka (Autorzy, ListaKsiążek, ListaDziałów, Dział+)>
 
 <!ELEMENT Autorzy (AutorDokumentu*, OpisDokumentu)>
 <!ELEMENT AutorDokumentu (Imię, Nazwisko)>

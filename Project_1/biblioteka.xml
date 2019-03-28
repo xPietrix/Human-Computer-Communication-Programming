@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="./ksiegarnia.css" type="text/css"?>
-<!DOCTYPE Księgarnia SYSTEM "ksiegarnia.dtd">
+<?xml-stylesheet href="./biblioteka.css" type="text/css"?>
+<!DOCTYPE Biblioteka SYSTEM "biblioteka.dtd">
 
-<Księgarnia>
+<Biblioteka>
 	<OpisDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki
 		<Autorzy>
 			<AutorDokumentu Indeks="210346">
@@ -159,4 +159,4 @@
 		</Egzemplarz>
 	</Dział>
 	
-</Księgarnia>
+</Biblioteka>
