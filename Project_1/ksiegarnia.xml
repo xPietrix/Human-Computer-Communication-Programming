@@ -3,7 +3,7 @@
 <!DOCTYPE Księgarnia SYSTEM "ksiegarnia.dtd">
 
 <Księgarnia>
-	<OpisDokumentu> Dokument przedstawia zestawienie książek występujących w księgarni
+	<OpisDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki
 		<Autorzy>
 			<AutorDokumentu Indeks="210346">
 				<Imię>Piotr</Imię>
