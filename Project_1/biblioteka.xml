@@ -3,7 +3,8 @@
 <!DOCTYPE Biblioteka SYSTEM "biblioteka.dtd">
 
 <Biblioteka>
-	<OpisDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki
+	<OpisDokumentu> 
+		<Tytuł>Dokument przedstawia zestawienie ksiazek z domowej biblioteki</Tytuł>
 		<Autorzy>
 			<AutorDokumentu Indeks="210346">
 				<Imię>Piotr</Imię>
