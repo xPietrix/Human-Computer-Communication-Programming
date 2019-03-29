@@ -8,15 +8,16 @@
 
 <!ENTITY % RodzajOkladki "(Miekka|Twarda)">
 
-<!ELEMENT Biblioteka (Autorzy, ListaKsiążek, ListaDziałów, Dział+)>
+<!ELEMENT Biblioteka (OpisDokumentu, ListaKsiazek, ListaDzialow, Dzial+)>
 
-<!ELEMENT Autorzy (AutorDokumentu*, OpisDokumentu)>
+<!ELEMENT OpisDokumentu (Tytul, Autorzy)>
+<!ELEMENT Tytul (#PCDATA) >
+<!ELEMENT Autorzy (AutorDokumentu*)>
 <!ELEMENT AutorDokumentu (Imię, Nazwisko)>
 <!ATTLIST AutorDokumentu
 		  Indeks CDATA #REQUIRED>
 <!ELEMENT Imię (#PCDATA)>
 <!ELEMENT Nazwisko (#PCDATA)>
-<!ELEMENT OpisDokumentu (#PCDATA)>
 
 <!ELEMENT ListaKsiążek (Książka+)>
 <!ELEMENT Książka EMPTY>
