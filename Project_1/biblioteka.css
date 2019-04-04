@@ -119,7 +119,7 @@ Egzemplarz
 	border-radius: 2ex;
 }
 
-Egzemplarz::before 
+Egzemplarz::before
 {
 	content: "Tytuł: " attr(Tytuł) "\a Autor: " attr(AutorKsiążki);
 	white-space: pre;
