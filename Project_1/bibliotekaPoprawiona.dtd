@@ -1,0 +1,45 @@
+<!ENTITY % Dni "(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)">
+<!ENTITY % Miesiące "(01|02|03|04|05|06|07|08|09|10|11|12)">
+<!ENTITY % Waluta "(PLN|EUR|USD)">
+<!ENTITY % RodzajOkładki "(Miękka|Twarda)">
+
+<!ELEMENT Biblioteka (OpisDokumentu, AutorzyKsiążek, ListaKsiążek)>
+
+<!ELEMENT OpisDokumentu (TytułDokumentu, Autorzy)>
+<!ELEMENT TytułDokumentu (#PCDATA) >
+<!ELEMENT Autorzy (AutorDokumentu+)>
+<!ELEMENT AutorDokumentu (ImięAutora, NazwiskoAutora)>
+<!ATTLIST AutorDokumentu
+		  Indeks CDATA #REQUIRED>
+<!ELEMENT ImięAutora (#PCDATA)>
+<!ELEMENT NazwiskoAutora (#PCDATA)>
+
+<!ELEMENT AutorzyKsiążek (Autor+)>
+<!ELEMENT Autor (Imię, Nazwisko, DataUrodzenia, MiejsceUrodzenia)>
+<!ATTLIST Autor 
+		  Id ID #REQUIRED>
+<!ELEMENT Imię (#PCDATA)>
+<!ELEMENT Nazwisko (#PCDATA)>
+<!ELEMENT DataUrodzenia (#PCDATA)>
+<!ATTLIST DataUrodzenia Dzień %Dni; #IMPLIED
+					  Miesiąc %Miesiące; #IMPLIED
+					  Rok CDATA #REQUIRED>
+<!ELEMENT MiejsceUrodzenia (#PCDATA)>
+
+<!ELEMENT ListaKsiążek (Książka+)>
+<!ELEMENT Książka (Tytuł, DataWydania, Cena, RodzajOkładki)>
+<!ATTLIST Książka 
+		  Autor IDREF #REQUIRED
+		  Gatunek CDATA #REQUIRED>
+<!ELEMENT Tytuł (#PCDATA)>
+<!ELEMENT DataWydania EMPTY>
+<!ATTLIST DataWydania Dzień %Dni; #IMPLIED
+					  Miesiąc %Miesiące; #IMPLIED
+					  Rok CDATA #REQUIRED>
+<!ELEMENT Cena (#PCDATA)>
+<!ATTLIST Cena 
+		  Waluta %Waluta; #REQUIRED>
+<!ELEMENT RodzajOkładki EMPTY>
+<!ATTLIST RodzajOkładki Rodzaj %RodzajOkładki; #REQUIRED>
+		  
+		  
