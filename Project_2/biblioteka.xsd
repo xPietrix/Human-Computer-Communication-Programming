@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.example.org/typy"
+			targetNamespace="http://www.example.org/typy" 
+			elementFormDefault="qualified" >
+
+	<xsd:element name="Biblioteka" type="typ:t_Biblioteka">
+		<xsd:key name="AutorKsiążkiKlucz">
+				<xsd:selector xpath="typ:t_AutorzyKsiążek/typ:t_AutorKsiążki"/>
+				<xsd:field xpath="@Id"/>
+		</xsd:key>
+		<xsd:keyref name="IdAutoraKsiążkiRef" refer="typ:AutorKsiążkiKlucz">
+			<xsd:selector xpath="typ:t_Książki/typ:t_Egzemplarz"/>
+			<xsd:field xpath="@Autor"/>
+		</xsd:keyref>
+		<xsd:key name="KsiążkaKlucz">
+			<xsd:selector xpath="typ:t_Książki/typ:t_Egzemplarz"/>
+			<xsd:field xpath="@IdKsiążki"/>
+		</xsd:key>
+	</xsd:element>
+
+	<xsd:complexType name="t_Biblioteka">
+		<xsd:sequence> 
+			<xsd:element name="OpisDokumentu" type="typ:t_OpisDokumentu" /> 
+			<xsd:element name="AutorzyKsiążek" type="typ:t_AutorzyKsiążek"/>
+			<xsd:element name="ListaKsiążek" type="typ:t_Książki"/>
+		</xsd:sequence> 
+	</xsd:complexType>
+			
+	<xsd:complexType name="t_OpisDokumentu">
+		<xsd:sequence>
+			<xsd:element name="TytułDokumentu" type="xsd:string" />
+			<xsd:element name="Autorzy" type="typ:t_AutorzyDokumentu"/>
+		</xsd:sequence>	
+	</xsd:complexType>
+	
+	<xsd:complexType name="t_AutorzyDokumentu">
+		<xsd:sequence>
+			<xsd:element name="AutorDokumentu" minOccurs="1" maxOccurs="unbounded" type="typ:t_AutorDokumentu"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="t_AutorDokumentu">
+		<xsd:sequence>
+			<xsd:element name="ImięAutora" type="typ:t_ImięNazwisko"/>
+			<xsd:element name="NazwiskoAutora" type="typ:t_ImięNazwisko"/>
+		</xsd:sequence>
+		<xsd:attribute name="Indeks" use="required" type="typ:t_Indeks"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="t_ImięNazwisko">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="t_Indeks">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="\d{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="t_AutorzyKsiążek">
+		<xsd:sequence>
+			<xsd:element name="Autor" minOccurs="1" maxOccurs="unbounded" type="typ:t_AutorKsiążki" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="t_AutorKsiążki">
+		<xsd:group ref="typ:g_ElementyAutoraKsiążki"/>
+		<xsd:attribute name="Id" use="required" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:group name="g_ElementyAutoraKsiążki">
+		<xsd:sequence>
+			<xsd:element name="Imię" type="typ:t_ImięNazwisko" />
+			<xsd:element name="Nazwisko" type="typ:t_ImięNazwisko"/>
+			<xsd:element name="DataUrodzenia" type="xsd:date"/>
+			<xsd:element name="MiejsceUrodzenia" type="typ:t_MiejsceUrodzenia"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:simpleType name="t_MiejsceUrodzenia">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="4"/>
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="t_Książki">
+		<xsd:sequence>
+			<xsd:element name="Książka" minOccurs="1" maxOccurs="unbounded" type="typ:t_Egzemplarz"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="t_Egzemplarz">
+		<xsd:group ref="typ:g_ElementyEgzemplarza"/>
+		<xsd:attributeGroup ref="typ:aG_AtrybutyEgzemplarza"/>
+	</xsd:complexType>
+	
+	<xsd:group name="g_ElementyEgzemplarza">
+		<xsd:sequence>
+			<xsd:element name="Tytuł" type="xsd:string"/>
+			<xsd:element name="DataWydania" type="xsd:date"/>
+			<xsd:element name="Cena" type="typ:t_Cena"/>
+			<xsd:element name="RodzajOkładki" type="typ:t_Okładka"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:attributeGroup name="aG_AtrybutyEgzemplarza">
+		<xsd:attribute name="Autor" use="required" type="xsd:string"/>
+		<xsd:attribute name="Gatunek" use="optional" type="xsd:string"/>
+		<xsd:attribute name="IdKsiążki"  use="required" type="xsd:string"/>
+	</xsd:attributeGroup>
+	
+	<xsd:complexType name="t_Cena">
+		<xsd:simpleContent>
+			<xsd:extension base="typ:t_WartośćCeny">
+				<xsd:attribute name="Waluta" use="required" type="typ:t_Waluta"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="t_WartośćCeny">
+		<xsd:restriction base="xsd:float">
+			<xsd:minExclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	
+	<xsd:simpleType name="t_Waluta">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="PLN"/>
+			<xsd:enumeration value="EUR"/>
+			<xsd:enumeration value="USD"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="t_Okładka">
+		<xsd:attribute name="Rodzaj" use="required" type="typ:t_TypOkładki"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="t_TypOkładki">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Miękka"/>
+			<xsd:enumeration value="Twarda"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+</xsd:schema>
