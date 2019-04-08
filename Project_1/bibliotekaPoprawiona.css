@@ -87,7 +87,7 @@ Autor:hover
 
 Autor::before
 {
-	content: "Autor: ";
+	content: "Autor: (" attr(Id) ") ";
 }
 
 DataUrodzenia
@@ -157,6 +157,11 @@ Książka::before
 DataWydania
 { 
 	display: block;
+}
+
+DataWydania::before
+{
+	content: "Data wydania: " attr(Dzień) "-" attr(Miesiąc) "-" attr(Rok);
 }
 
 Cena
