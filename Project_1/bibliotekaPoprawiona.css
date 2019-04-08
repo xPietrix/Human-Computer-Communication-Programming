@@ -1,6 +1,6 @@
-Biblioteka
+﻿Biblioteka
 {
-	background-color: #666666;
+	background-image: url("background.jpg");
 	font-family: verdana;
 	color: white;
 }
@@ -16,6 +16,7 @@ TytułDokumentu
 	width: 79%;
 	height: 10%;
 
+	text-shadow: 2px 2px 10px red;
 	font-size: 2vw;
 	font-weight: bold;
 	text-align: center;
@@ -39,7 +40,7 @@ AutorDokumentu
 	display: list-item;
 	list-style: none;
 	margin: 5px;
-	text-align: left
+	text-align: left;
 }
 
 AutorDokumentu::after
@@ -53,9 +54,9 @@ AutorzyKsiążek
 	margin: 2%;
 	padding: 1%;
 	border-radius: 2ex;
-	background-color: blue;
 	font-size: 1vw;
 	text-align: center;
+	box-shadow: 2px 2px 10px; 
 }
 
 AutorzyKsiążek::before
@@ -74,7 +75,9 @@ Autor
 	display: inline-block;
 	width: 20%;
 	padding: 1%;
+	margin: 10px;
 	border: 2px solid black;
+	background-color: #4b0a84;
 	border-radius: 2ex;
 	text-align: left;
 }
@@ -115,10 +118,10 @@ ListaKsiążek
 	display: block;
 	margin: 2%;
 	padding: 1%;
-	background-color: darkblue;
 	border-radius: 2ex;
 	font-size: 1vw;
 	text-align: center;
+	box-shadow: 2px 2px 10px;
 }
 
 ListaKsiążek::before
@@ -137,6 +140,8 @@ Książka
 	display: inline-block;
 	width: 20%;
 	padding: 1%;
+	margin: 10px;
+	background-color: darkblue;
 	border: 2px solid black;
 	border-radius: 2ex;
 	text-align: left;
