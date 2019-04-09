@@ -43,16 +43,25 @@
 	
 	<xsd:complexType name="t_AutorDokumentu">
 		<xsd:sequence>
-			<xsd:element name="ImięAutora" type="typ:t_ImięNazwisko"/>
-			<xsd:element name="NazwiskoAutora" type="typ:t_ImięNazwisko"/>
+			<xsd:element name="ImięAutora" type="typ:t_Imię"/>
+			<xsd:element name="NazwiskoAutora" type="typ:t_Nazwisko"/>
 		</xsd:sequence>
 		<xsd:attribute name="Indeks" use="required" type="typ:t_Indeks"/>
 	</xsd:complexType>
 	
-	<xsd:simpleType name="t_ImięNazwisko">
+	<xsd:simpleType name="t_Imię">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\p{L})+"/>
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="t_Nazwisko">
 		<xsd:restriction base="xsd:string">
 			<xsd:minLength value="2"/>
 			<xsd:maxLength value="50"/>
+			<xsd:pattern value="((\p{L})+)|((\p{L}+( |[-])(\p{L})*)+)"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	
@@ -70,21 +79,28 @@
 	
 	<xsd:complexType name="t_AutorKsiążki">
 		<xsd:group ref="typ:g_ElementyAutoraKsiążki"/>
-		<xsd:attribute name="Id" use="required" type="xsd:string"/>
+		<xsd:attribute name="Id" use="required" type="typ:t_IdAutora"/>
 	</xsd:complexType>
 	
 	<xsd:group name="g_ElementyAutoraKsiążki">
 		<xsd:sequence>
-			<xsd:element name="Imię" type="typ:t_ImięNazwisko" />
-			<xsd:element name="Nazwisko" type="typ:t_ImięNazwisko"/>
+			<xsd:element name="Imię" type="typ:t_Imię" />
+			<xsd:element name="Nazwisko" type="typ:t_Nazwisko"/>
 			<xsd:element name="DataUrodzenia" type="xsd:date"/>
 			<xsd:element name="MiejsceUrodzenia" type="typ:t_MiejsceUrodzenia"/>
 		</xsd:sequence>
 	</xsd:group>
 	
+	<xsd:simpleType name="t_IdAutora">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a]\p{N}+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
 	<xsd:simpleType name="t_MiejsceUrodzenia">
 		<xsd:restriction base="xsd:string">
-			<xsd:minLength value="4"/>
+			<xsd:pattern value="(\p{L}+)|((\p{L}+ (\p{L})*)+)"/>
+			<xsd:minLength value="3"/>
 			<xsd:maxLength value="50"/>
 		</xsd:restriction>
 	</xsd:simpleType>
@@ -102,18 +118,41 @@
 	
 	<xsd:group name="g_ElementyEgzemplarza">
 		<xsd:sequence>
-			<xsd:element name="Tytuł" type="xsd:string"/>
+			<xsd:element name="Tytuł" type="typ:t_Tytuł"/>
 			<xsd:element name="DataWydania" type="xsd:date"/>
 			<xsd:element name="Cena" type="typ:t_Cena"/>
 			<xsd:element name="RodzajOkładki" type="typ:t_Okładka"/>
 		</xsd:sequence>
 	</xsd:group>
 	
+	<xsd:simpleType name="t_Tytuł">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\p{L}+)|((\p{L}+ (\p{L})*)+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
 	<xsd:attributeGroup name="aG_AtrybutyEgzemplarza">
 		<xsd:attribute name="Autor" use="required" type="xsd:string"/>
-		<xsd:attribute name="Gatunek" use="optional" type="xsd:string"/>
-		<xsd:attribute name="IdKsiążki"  use="required" type="xsd:string"/>
+		<xsd:attribute name="Gatunek" use="optional" type="typ:t_Gatunek"/>
+		<xsd:attribute name="IdKsiążki"  use="required" type="typ:t_IdKsiążki"/>
 	</xsd:attributeGroup>
+	
+	<xsd:simpleType name="t_Gatunek">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Fantasy"/>
+			<xsd:enumeration value="Kryminał"/>
+			<xsd:enumeration value="Obyczajowa"/>
+			<xsd:enumeration value="Historyczna"/>
+			<xsd:enumeration value="Biografia"/>
+			<xsd:enumeration value="Dla dzieci"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="t_IdKsiążki">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[k]\p{N}+" />
+		</xsd:restriction>
+	</xsd:simpleType>
 	
 	<xsd:complexType name="t_Cena">
 		<xsd:simpleContent>
