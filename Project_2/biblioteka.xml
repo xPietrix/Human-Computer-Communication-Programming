@@ -21,8 +21,8 @@ xsi:schemaLocation="http://www.example.org/typy file:///E:/ProgramowanieKomunika
 	
 	<AutorzyKsiążek>
 		<Autor Id="a1">
-			<Imię>J K</Imię>
-			<Nazwisko>Rowling</Nazwisko>
+			<Imię>J. K.</Imię>
+			<Nazwisko>Rowling-Elo</Nazwisko>
 			<DataUrodzenia>2004-01-31</DataUrodzenia>
 			<MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
 		</Autor>
