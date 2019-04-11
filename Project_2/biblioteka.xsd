@@ -99,7 +99,7 @@
 	
 	<xsd:simpleType name="t_MiejsceUrodzenia">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="(\p{L}+)|((\p{L}+ (\p{L})*)+)"/>
+			<xsd:pattern value="\p{L}+ *((\p{L})+)*"/>
 			<xsd:minLength value="3"/>
 			<xsd:maxLength value="50"/>
 		</xsd:restriction>
