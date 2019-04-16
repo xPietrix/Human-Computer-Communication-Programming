@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 			xmlns:typ="http://www.example.org/typy"
-			
 			targetNamespace="http://www.example.org/typy" 
 			elementFormDefault="qualified" >
 
 	<xsd:element name="Biblioteka" type="typ:t_Biblioteka">
 		<xsd:key name="AutorKsiążkiKlucz">
-				<xsd:selector xpath="typ:t_AutorzyKsiążek/typ:t_AutorKsiążki"/>
+				<xsd:selector xpath="./typ:AutorzyKsiążek/typ:Autor"/>
 				<xsd:field xpath="@Id"/>
 		</xsd:key>
 		<xsd:keyref name="IdAutoraKsiążkiRef" refer="typ:AutorKsiążkiKlucz">
-			<xsd:selector xpath="typ:t_Książki/typ:t_Egzemplarz"/>
+			<xsd:selector xpath="./typ:ListaKsiążek/typ:Książka"/>
 			<xsd:field xpath="@Autor"/>
 		</xsd:keyref>
 		<xsd:key name="KsiążkaKlucz">
-			<xsd:selector xpath="typ:t_Książki/typ:t_Egzemplarz"/>
+			<xsd:selector xpath="./typ:ListaKsiążek/typ:Książka"/>
 			<xsd:field xpath="@IdKsiążki"/>
 		</xsd:key>
 	</xsd:element>

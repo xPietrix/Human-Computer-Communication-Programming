@@ -100,14 +100,14 @@ xsi:schemaLocation="http://www.example.org/typy file:///E:/ProgramowanieKomunika
 	<ListaKsiążek>
 
 		<Książka Autor="a1" Gatunek="Fantasy" IdKsiążki="k1">
-			<Tytuł>Harry Potter Ind Czara Ognia</Tytuł>
+			<Tytuł>Harry Potter I Czara Ognia</Tytuł>
 			<DataWydania> 2000-07-08 </DataWydania>
 			<Cena Waluta="USD"> 12.89 </Cena>
 			<RodzajOkładki Rodzaj="Twarda"/>
 		</Książka>
 		
 		<Książka Autor="a1" Gatunek="Fantasy" IdKsiążki="k2">
-			<Tytuł>Harry Potter Imd Zakon Feniksa</Tytuł>
+			<Tytuł>Harry Potter I Zakon Feniksa</Tytuł>
 			<DataWydania> 2005-01-31 </DataWydania>
 			<Cena Waluta="PLN"> 29.99 </Cena>
 			<RodzajOkładki Rodzaj="Miękka"/>
