@@ -50,7 +50,7 @@
 	
 	<xsd:simpleType name="t_Imię">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="(\p{L})*.* *.(\p{L})*."/>
+			<xsd:pattern value="(\p{Lu}\p{Ll}*( \p{Lu}\p{Ll}*)*)|((\p{Lu}). (\p{Lu}).)"/>
 			<xsd:minLength value="2"/>
 			<xsd:maxLength value="50"/>
 		</xsd:restriction>
@@ -60,7 +60,7 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:minLength value="2"/>
 			<xsd:maxLength value="50"/>
-			<xsd:pattern value="(\p{L})+ *-*(\p{L})+"/>
+			<xsd:pattern value="(\p{Lu}\p{Ll}*) *-*(\p{Lu}\p{Ll}*)*"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	
@@ -131,7 +131,7 @@
 	</xsd:simpleType>
 	
 	<xsd:attributeGroup name="aG_AtrybutyEgzemplarza">
-		<xsd:attribute name="Autor" use="required" type="xsd:string"/>
+		<xsd:attribute name="Autor" use="required" type="typ:t_IdAutora"/>
 		<xsd:attribute name="Gatunek" use="optional" type="typ:t_Gatunek"/>
 		<xsd:attribute name="IdKsiążki"  use="required" type="typ:t_IdKsiążki"/>
 	</xsd:attributeGroup>

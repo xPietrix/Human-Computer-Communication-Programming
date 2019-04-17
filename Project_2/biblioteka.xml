@@ -22,7 +22,7 @@ xsi:schemaLocation="http://www.example.org/typy file:///E:/ProgramowanieKomunika
 	<AutorzyKsiążek>
 		<Autor Id="a1">
 			<Imię>J. K.</Imię>
-			<Nazwisko>Rowling-Elo</Nazwisko>
+			<Nazwisko>Rowling</Nazwisko>
 			<DataUrodzenia>2004-01-31</DataUrodzenia>
 			<MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
 		</Autor>
@@ -34,13 +34,13 @@ xsi:schemaLocation="http://www.example.org/typy file:///E:/ProgramowanieKomunika
 		</Autor>
 		<Autor Id="a3">
 			<Imię>Christopher</Imię>
-			<Nazwisko>Paolini</Nazwisko>
+			<Nazwisko>Paolini Testowy</Nazwisko>
 			<DataUrodzenia>1983-11-17</DataUrodzenia>
 			<MiejsceUrodzenia>USA</MiejsceUrodzenia>
 		</Autor>
 		<Autor Id="a4">
 			<Imię>Jo</Imię>
-			<Nazwisko>Nesbo</Nazwisko>
+			<Nazwisko>Nesbo-Myślnikowy</Nazwisko>
 			<DataUrodzenia>1960-03-29</DataUrodzenia>
 			<MiejsceUrodzenia>Norwegia</MiejsceUrodzenia>
 		</Autor>
