@@ -60,7 +60,7 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:minLength value="2"/>
 			<xsd:maxLength value="50"/>
-			<xsd:pattern value="(\p{Lu}\p{Ll}*) *-*(\p{Lu}\p{Ll}*)*"/>
+			<xsd:pattern value="(\p{Lu}\p{Ll}+)(( |-)\p{Lu}\p{Ll}+)?"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	
