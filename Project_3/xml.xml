@@ -251,7 +251,7 @@
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
    </ListaKsiążek>
-   <Podsumowanie xmlns:date="http://exslt.org/dates-and-times">
+   <Podsumowanie>
       <LiczebnośćKsiążek>
          <WszystkichKsiążek>20</WszystkichKsiążek>
          <KsiążekFantasy>6</KsiążekFantasy>
@@ -264,6 +264,9 @@
          <USD>102.82</USD>
          <EUR>58.36</EUR>
       </SumaWydanychPieniędzy>
-      <DataWygenerowaniaRaportu>2019-05-09T15:01:49.294+02:00</DataWygenerowaniaRaportu>
+      <DataWygenerowaniaRaportu>
+         <Data>09/05/2019</Data>
+         <Czas>18:12, GMT+02:00</Czas>
+      </DataWygenerowaniaRaportu>
    </Podsumowanie>
 </Biblioteka>

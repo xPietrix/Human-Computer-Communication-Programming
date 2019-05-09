@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:date="http://exslt.org/dates-and-times" >
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	
@@ -43,7 +43,14 @@
 						<xsl:value-of select="sum(/Biblioteka/ListaKsiążek/Książka/Cena[@Waluta='EUR'])"/>
 					</EUR>
 				</SumaWydanychPieniędzy>
-				<DataWygenerowaniaRaportu><xsl:value-of select="date:date-time()"/></DataWygenerowaniaRaportu>
+				<DataWygenerowaniaRaportu>
+					<Data>
+						<xsl:value-of select="format-date(current-date(), '[D01]/[M01]/[Y0001]')"/>
+					</Data>
+					<Czas>
+						<xsl:value-of select="format-time(current-time(), '[H01]:[m01], [z]')"/>
+					</Czas>
+				</DataWygenerowaniaRaportu>
 			</Podsumowanie>
 		</xsl:element>
 	</xsl:template>

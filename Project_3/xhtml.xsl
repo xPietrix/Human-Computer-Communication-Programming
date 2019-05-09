@@ -44,10 +44,10 @@ doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
     </xsl:template>
 	
 	<xsl:template name="ListaKsiążek" >
-        <div id="Książki">
+		<div id="Książki">
             <h2> Książki </h2>
             <table>
-				<tr>
+            	<tr>
 					<th>Tytuł</th> 
                     <th>Autor</th>
                     <th>Data Wydania</th>
@@ -115,8 +115,8 @@ doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
 	<xsl:template name="Podsumowanie">
 		<div id="Podsumowanie">
 			<h2>Podsumowanie</h2>
-			<h4>Liczebność książek</h4>
 			<table>
+				<caption>Liczebność książek</caption>
 				<tr>
 					<th>Wszystkich książek</th>
 					<th>Książki fantasy</th>
@@ -143,8 +143,8 @@ doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
 				</tr>
 			</table>
 			
-			<h4>Suma wydanych pieniędzy</h4>
 			<table>
+				<caption>Suma wydanych pieniędzy</caption>
 				<tr>
 					<th>PLN</th>
 					<th>USD</th>
@@ -162,6 +162,22 @@ doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
 					</td>
 				</tr>
 			</table>
+			<table>
+				<caption>Data wygenerowania raportu</caption>
+				<tr>
+					<th>Data</th>
+					<th>Czas</th>
+				</tr>
+				<tr>
+					<td>
+						<xsl:value-of select="//Data"/>
+					</td>
+					<td>
+						<xsl:value-of select="//Czas"/>
+					</td>
+				</tr>
+			</table>
+			
 		</div>
 	</xsl:template>
 			

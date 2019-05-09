@@ -3,7 +3,8 @@ body{
     font-size: 20px;
 	color: white;
     background-image: url("background.jpg");
-    margin: 20px;
+    margin: 3%;
+    text-align: center;
 }
 
 #Tytuł{
@@ -16,25 +17,65 @@ body{
     display: inline-block;
 }
 
+h1{
+    text-shadow: 2px 2px 10px red;
+}
+
+h2{
+    text-align: left;
+    padding-left: 20%;
+    font-size:40px;
+    text-shadow: 2px 2px 10px yellow;
+}
+
+table{
+    border-radius: 2ex;
+    display: inline-table;
+    padding: 1%;
+    margin: 1%;
+    box-shadow: 2px 2px 10px black;
+}
+
+td, th{
+    padding: 1%;
+    min-width: 240px;
+    text-align: center;
+}
+
+th{
+    text-shadow: 2px 2px 10px pink;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+td{
+    border-bottom: 1px solid white;
+}
+
 #Książki{
 	border-radius: 2ex;
 	box-shadow: 2px 2px 10px;
-	margin: 2%;
 	padding: 1%;
+	margin: 2%;
 }
 
 #Autorzy{
 	border-radius: 2ex;
 	box-shadow: 2px 2px 10px;
+	padding: 1%; 
 	margin: 2%;
-	padding: 1%;
 }
 
 #Podsumowanie{
 	border-radius: 2ex;
 	box-shadow: 2px 2px 10px;
-	margin: 2%;
 	padding: 1%;
+	margin: 2%;
+}
+
+h4{
+    text-align: left;
+    padding-left: 20%;
 }
 
 
