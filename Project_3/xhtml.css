@@ -1,0 +1,40 @@
+body{
+    font-family: Verdana;
+    font-size: 20px;
+	color: white;
+    background-image: url("background.jpg");
+    margin: 20px;
+}
+
+#Tytuł{
+    display: inline-block;
+    width: 75%;
+    text-align: center;
+}
+
+#AutorzyDokumentu{
+    display: inline-block;
+}
+
+#Książki{
+	border-radius: 2ex;
+	box-shadow: 2px 2px 10px;
+	margin: 2%;
+	padding: 1%;
+}
+
+#Autorzy{
+	border-radius: 2ex;
+	box-shadow: 2px 2px 10px;
+	margin: 2%;
+	padding: 1%;
+}
+
+#Podsumowanie{
+	border-radius: 2ex;
+	box-shadow: 2px 2px 10px;
+	margin: 2%;
+	padding: 1%;
+}
+
+

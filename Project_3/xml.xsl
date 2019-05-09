@@ -87,8 +87,11 @@
 	
 	<xsl:template match="//Autor">
 		<xsl:element name="Autor">
-			<xsl:element name="ImięNazwisko">
-				<xsl:value-of select="Imię, Nazwisko" />
+			<xsl:element name="Imię">
+				<xsl:value-of select="Imię" />
+			</xsl:element>
+			<xsl:element name="Nazwisko">
+				<xsl:value-of select="Nazwisko" />
 			</xsl:element>
 			<xsl:element name="DataUrodzenia">
 				<xsl:value-of select="DataUrodzenia" />
@@ -126,7 +129,7 @@
 					<xsl:value-of select="concat(Cena, ' ', Cena/@Waluta)" />
 				</xsl:element>
 				<xsl:element name="RodzajOkładki">
-					<xsl:value-of select="RodzajOkładki" />
+					<xsl:value-of select="RodzajOkładki/@Rodzaj" />
 				</xsl:element>
 			</xsl:element>
 	</xsl:template>
