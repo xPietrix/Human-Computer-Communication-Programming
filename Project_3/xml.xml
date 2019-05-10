@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Biblioteka>
-   <OpisDokumentu>
+	  <OpisDokumentu>
       <TytułDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki </TytułDokumentu>
       <Autorzy>
          <AutorDokumentu>
@@ -15,7 +15,8 @@
          </AutorDokumentu>
       </Autorzy>
    </OpisDokumentu>
-   <AutorzyKsiążek>
+	
+	  <AutorzyKsiążek>
       <Autor>
          <Imię>Peter</Imię>
          <Nazwisko>Brett</Nazwisko>
@@ -89,7 +90,9 @@
          <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
       </Autor>
    </AutorzyKsiążek>
-   <ListaKsiążek>
+	
+	
+	  <ListaKsiążek>
       <Książka>
          <Tytuł>Brisingr</Tytuł>
          <Autor>Christopher Paolini Testowy</Autor>
@@ -251,6 +254,7 @@
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
    </ListaKsiążek>
+	
    <Podsumowanie>
       <LiczebnośćKsiążek>
          <WszystkichKsiążek>20</WszystkichKsiążek>
@@ -265,8 +269,8 @@
          <EUR>58.36</EUR>
       </SumaWydanychPieniędzy>
       <DataWygenerowaniaRaportu>
-         <Data>09/05/2019</Data>
-         <Czas>18:12, GMT+02:00</Czas>
+         <Data>10/05/2019</Data>
+         <Czas>08:03, GMT+02:00</Czas>
       </DataWygenerowaniaRaportu>
    </Podsumowanie>
 </Biblioteka>

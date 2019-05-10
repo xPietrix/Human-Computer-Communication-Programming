@@ -3,10 +3,10 @@
 
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	
-	<xsl:template match="@* | node()" />
+	<xsl:template match="node()" />
 
 	<xsl:template match="*">
-		<xsl:apply-templates select="@TEXT | node()"/>
+		<xsl:apply-templates select="node()"/>
 	</xsl:template>
 
 	<xsl:key use="@Id" name="AutorKey" match="//AutorzyKsiążek/Autor" />
