@@ -1,0 +1,249 @@
+RAPORT W FORMACIE TXT 
+
+Zestawienie książek z domowej biblioteki 
+ 
+AUTORZY DOKUMENTU: 
+ 
+Piotr Wasiak 210346
+Mateusz Kubicki 210238
+
+ 
+AUTORZY KSIĄŻEK:
+
+Imię: 	 	 	 	Peter
+Nazwisko: 	 	 	Brett
+Data urodzenia: 	1973-02-08
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	Alexandre
+Nazwisko: 	 	 	Dumas
+Data urodzenia: 	 1802-07-24 
+Miejsce urodzenia: 	Francja
+ 
+Imię: 	 	 	 	Kennedy
+Nazwisko: 	 	 	Elle
+Data urodzenia: 	1982-01-19
+Miejsce urodzenia: 	Kanada
+ 
+Imię: 	 	 	 	Camilla
+Nazwisko: 	 	 	Lackberg
+Data urodzenia: 	1974-07-30
+Miejsce urodzenia: 	Szwecja
+ 
+Imię: 	 	 	 	Meghan
+Nazwisko: 	 	 	March
+Data urodzenia: 	 1983-04-15 
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	Joyo
+Nazwisko: 	 	 	Moyes
+Data urodzenia: 	 1969-08-04 
+Miejsce urodzenia: 	Wielka Brytania
+ 
+Imię: 	 	 	 	Remigiusz
+Nazwisko: 	 	 	Mróz
+Data urodzenia: 	 1987-01-15 
+Miejsce urodzenia: 	Polska
+ 
+Imię: 	 	 	 	Jo
+Nazwisko: 	 	 	Nesbo-Myślnikowy
+Data urodzenia: 	1960-03-29
+Miejsce urodzenia: 	Norwegia
+ 
+Imię: 	 	 	 	Christopher
+Nazwisko: 	 	 	Paolini Testowy
+Data urodzenia: 	1983-11-17
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	J. K.
+Nazwisko: 	 	 	Rowling
+Data urodzenia: 	2004-01-31
+Miejsce urodzenia: 	Wielka Brytania
+ 
+Imię: 	 	 	 	Henryk
+Nazwisko: 	 	 	Sienkiewicz
+Data urodzenia: 	 1846-05-05 
+Miejsce urodzenia: 	Polska
+ 
+Imię: 	 	 	 	Ewa
+Nazwisko: 	 	 	Stachniak
+Data urodzenia: 	 1952-11-27 
+Miejsce urodzenia: 	Polska
+ 
+LISTA KSIĄŻEK: 
+ 
+Tytuł: 	 	 	 	 Brisingr
+Autor: 	 	 	 	 Christopher Paolini Testowy
+Data wydania: 	 	 2008-09-20 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 29.69  PLN
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Błąd
+Autor: 	 	 	 	 Kennedy Elle
+Data wydania: 	 	 2016-07-04 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 12.89  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Eragon
+Autor: 	 	 	 	 Christopher Paolini Testowy
+Data wydania: 	 	 2005-02-13 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 9.99  EUR
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Harry Potter I Czara Ognia
+Autor: 	 	 	 	 J. K. Rowling
+Data wydania: 	 	 2000-07-08 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 12.89  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Harry Potter I Zakon Feniksa
+Autor: 	 	 	 	 J. K. Rowling
+Data wydania: 	 	 2005-01-31 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 29.99  PLN
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Harry Potter i Czara Ognia
+Autor: 	 	 	 	 Ewa Stachniak
+Data wydania: 	 	 2013-04-17 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 28.89  PLN
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Krzyżacy
+Autor: 	 	 	 	 Henryk Sienkiewicz
+Data wydania: 	 	 2015-07-01 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 28.79  PLN
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Król bez skrupułów
+Autor: 	 	 	 	 Meghan March
+Data wydania: 	 	 2018-02-12 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 8.59  EUR
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Księżniczka Z Lodu
+Autor: 	 	 	 	 Camilla Lackberg
+Data wydania: 	 	 2011-09-07 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 12.89  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Malowany Człowiek
+Autor: 	 	 	 	 Peter Brett
+Data wydania: 	 	 2008-09-01 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 42.49  PLN
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pan Wołodyjowski
+Autor: 	 	 	 	 Henryk Sienkiewicz
+Data wydania: 	 	 2010-04-03 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 23.88  PLN
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pierwszy śnieg
+Autor: 	 	 	 	 Jo Nesbo-Myślnikowy
+Data wydania: 	 	 2014-06-04 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 13.89  USD
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pod tą maską
+Autor: 	 	 	 	 Meghan March
+Data wydania: 	 	 2014-09-23 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 9.89  EUR
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pościg
+Autor: 	 	 	 	 Kennedy Elle
+Data wydania: 	 	 2019-03-04 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 11.79  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pragnienie
+Autor: 	 	 	 	 Jo Nesbo-Myślnikowy
+Data wydania: 	 	 2017-03-29 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 34.00  PLN
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pustynna Włócznia
+Autor: 	 	 	 	 Peter Brett
+Data wydania: 	 	 2010-03-27 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 12.89  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Srebrna Zatoka
+Autor: 	 	 	 	 Joyo Moyes
+Data wydania: 	 	 2019-01-16 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 19.89  PLN
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Trzej muszkieterowie
+Autor: 	 	 	 	 Alexandre Dumas
+Data wydania: 	 	 2016-02-12 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 11.39  USD
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Umorzenie
+Autor: 	 	 	 	 Remigiusz Mróz
+Data wydania: 	 	 2019-03-13 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 29.89  EUR
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Zanim się pojawiłeś
+Autor: 	 	 	 	 Joyo Moyes
+Data wydania: 	 	 2016-11-09 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 14.19  USD
+Rodzaj okładki: 	 Miękka
+
+ 
+	 PODSUMOWANIE:
+
+Liczba książek: 	 	 	20
+Książki fantasy: 	 	 	6
+Książki kryminalne: 	 	4
+Książki obyczajowe: 	 	6
+Książki historyczne: 	 	4
+ 
+Suma wydanych pieniędzy: 	 
+ 
+PLN: 	237.62
+USD: 	102.82
+EUR: 	58.36
+ 
+Raport wygenerowano dnia 09/05/2019 o godzinie 18:12 czasu GMT+02:00

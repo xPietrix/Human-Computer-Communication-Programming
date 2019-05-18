@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Biblioteka>
+   <OpisDokumentu>
+      <TytułDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki </TytułDokumentu>
+      <Autorzy>
+         <AutorDokumentu>
+            <Indeks>210346</Indeks>
+            <Imię>Piotr</Imię>
+            <Nazwisko>Wasiak</Nazwisko>
+         </AutorDokumentu>
+         <AutorDokumentu>
+            <Indeks>210238</Indeks>
+            <Imię>Mateusz</Imię>
+            <Nazwisko>Kubicki</Nazwisko>
+         </AutorDokumentu>
+      </Autorzy>
+   </OpisDokumentu>
+   <AutorzyKsiążek>
+      <Autor>
+         <Imię>Peter</Imię>
+         <Nazwisko>Brett</Nazwisko>
+         <DataUrodzenia>1973-02-08</DataUrodzenia>
+         <MiejsceUrodzenia>USA</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Alexandre</Imię>
+         <Nazwisko>Dumas</Nazwisko>
+         <DataUrodzenia> 1802-07-24 </DataUrodzenia>
+         <MiejsceUrodzenia>Francja</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Kennedy</Imię>
+         <Nazwisko>Elle</Nazwisko>
+         <DataUrodzenia>1982-01-19</DataUrodzenia>
+         <MiejsceUrodzenia>Kanada</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Camilla</Imię>
+         <Nazwisko>Lackberg</Nazwisko>
+         <DataUrodzenia>1974-07-30</DataUrodzenia>
+         <MiejsceUrodzenia>Szwecja</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Meghan</Imię>
+         <Nazwisko>March</Nazwisko>
+         <DataUrodzenia> 1983-04-15 </DataUrodzenia>
+         <MiejsceUrodzenia>USA</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Joyo</Imię>
+         <Nazwisko>Moyes</Nazwisko>
+         <DataUrodzenia> 1969-08-04 </DataUrodzenia>
+         <MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Remigiusz</Imię>
+         <Nazwisko>Mróz</Nazwisko>
+         <DataUrodzenia> 1987-01-15 </DataUrodzenia>
+         <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Jo</Imię>
+         <Nazwisko>Nesbo-Myślnikowy</Nazwisko>
+         <DataUrodzenia>1960-03-29</DataUrodzenia>
+         <MiejsceUrodzenia>Norwegia</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Christopher</Imię>
+         <Nazwisko>Paolini Testowy</Nazwisko>
+         <DataUrodzenia>1983-11-17</DataUrodzenia>
+         <MiejsceUrodzenia>USA</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>J. K.</Imię>
+         <Nazwisko>Rowling</Nazwisko>
+         <DataUrodzenia>2004-01-31</DataUrodzenia>
+         <MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Henryk</Imię>
+         <Nazwisko>Sienkiewicz</Nazwisko>
+         <DataUrodzenia> 1846-05-05 </DataUrodzenia>
+         <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+      </Autor>
+      <Autor>
+         <Imię>Ewa</Imię>
+         <Nazwisko>Stachniak</Nazwisko>
+         <DataUrodzenia> 1952-11-27 </DataUrodzenia>
+         <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+      </Autor>
+   </AutorzyKsiążek>
+   <ListaKsiążek>
+      <Książka>
+         <Tytuł>Brisingr</Tytuł>
+         <Autor>Christopher Paolini Testowy</Autor>
+         <DataWydania> 2008-09-20 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 29.69  PLN</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Błąd</Tytuł>
+         <Autor>Kennedy Elle</Autor>
+         <DataWydania> 2016-07-04 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 12.89  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Eragon</Tytuł>
+         <Autor>Christopher Paolini Testowy</Autor>
+         <DataWydania> 2005-02-13 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 9.99  EUR</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Harry Potter I Czara Ognia</Tytuł>
+         <Autor>J. K. Rowling</Autor>
+         <DataWydania> 2000-07-08 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 12.89  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Harry Potter I Zakon Feniksa</Tytuł>
+         <Autor>J. K. Rowling</Autor>
+         <DataWydania> 2005-01-31 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 29.99  PLN</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Harry Potter i Czara Ognia</Tytuł>
+         <Autor>Ewa Stachniak</Autor>
+         <DataWydania> 2013-04-17 </DataWydania>
+         <Gatunek>Historyczna</Gatunek>
+         <Cena> 28.89  PLN</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Krzyżacy</Tytuł>
+         <Autor>Henryk Sienkiewicz</Autor>
+         <DataWydania> 2015-07-01 </DataWydania>
+         <Gatunek>Historyczna</Gatunek>
+         <Cena> 28.79  PLN</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Król bez skrupułów</Tytuł>
+         <Autor>Meghan March</Autor>
+         <DataWydania> 2018-02-12 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 8.59  EUR</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Księżniczka Z Lodu</Tytuł>
+         <Autor>Camilla Lackberg</Autor>
+         <DataWydania> 2011-09-07 </DataWydania>
+         <Gatunek>Kryminał</Gatunek>
+         <Cena> 12.89  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Malowany Człowiek</Tytuł>
+         <Autor>Peter Brett</Autor>
+         <DataWydania> 2008-09-01 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 42.49  PLN</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pan Wołodyjowski</Tytuł>
+         <Autor>Henryk Sienkiewicz</Autor>
+         <DataWydania> 2010-04-03 </DataWydania>
+         <Gatunek>Historyczna</Gatunek>
+         <Cena> 23.88  PLN</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pierwszy śnieg</Tytuł>
+         <Autor>Jo Nesbo-Myślnikowy</Autor>
+         <DataWydania> 2014-06-04 </DataWydania>
+         <Gatunek>Kryminał</Gatunek>
+         <Cena> 13.89  USD</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pod tą maską</Tytuł>
+         <Autor>Meghan March</Autor>
+         <DataWydania> 2014-09-23 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 9.89  EUR</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pościg</Tytuł>
+         <Autor>Kennedy Elle</Autor>
+         <DataWydania> 2019-03-04 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 11.79  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pragnienie</Tytuł>
+         <Autor>Jo Nesbo-Myślnikowy</Autor>
+         <DataWydania> 2017-03-29 </DataWydania>
+         <Gatunek>Kryminał</Gatunek>
+         <Cena> 34.00  PLN</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Pustynna Włócznia</Tytuł>
+         <Autor>Peter Brett</Autor>
+         <DataWydania> 2010-03-27 </DataWydania>
+         <Gatunek>Fantasy</Gatunek>
+         <Cena> 12.89  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Srebrna Zatoka</Tytuł>
+         <Autor>Joyo Moyes</Autor>
+         <DataWydania> 2019-01-16 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 19.89  PLN</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Trzej muszkieterowie</Tytuł>
+         <Autor>Alexandre Dumas</Autor>
+         <DataWydania> 2016-02-12 </DataWydania>
+         <Gatunek>Historyczna</Gatunek>
+         <Cena> 11.39  USD</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Umorzenie</Tytuł>
+         <Autor>Remigiusz Mróz</Autor>
+         <DataWydania> 2019-03-13 </DataWydania>
+         <Gatunek>Kryminał</Gatunek>
+         <Cena> 29.89  EUR</Cena>
+         <RodzajOkładki>Twarda</RodzajOkładki>
+      </Książka>
+      <Książka>
+         <Tytuł>Zanim się pojawiłeś</Tytuł>
+         <Autor>Joyo Moyes</Autor>
+         <DataWydania> 2016-11-09 </DataWydania>
+         <Gatunek>Obyczajowa</Gatunek>
+         <Cena> 14.19  USD</Cena>
+         <RodzajOkładki>Miękka</RodzajOkładki>
+      </Książka>
+   </ListaKsiążek>
+   <Podsumowanie>
+      <LiczebnośćKsiążek>
+         <WszystkichKsiążek>20</WszystkichKsiążek>
+         <KsiążekFantasy>6</KsiążekFantasy>
+         <KsiążekKryminalnych>4</KsiążekKryminalnych>
+         <KsiążekObyczajowych>6</KsiążekObyczajowych>
+         <KsiążekHistorycznych>4</KsiążekHistorycznych>
+      </LiczebnośćKsiążek>
+      <SumaWydanychPieniędzy>
+         <PLN>237.62</PLN>
+         <USD>102.82</USD>
+         <EUR>58.36</EUR>
+      </SumaWydanychPieniędzy>
+      <DataWygenerowaniaRaportu>
+         <Data>09/05/2019</Data>
+         <Czas>18:12, GMT+02:00</Czas>
+      </DataWygenerowaniaRaportu>
+   </Podsumowanie>
+</Biblioteka>
