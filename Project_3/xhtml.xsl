@@ -71,7 +71,7 @@ doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
                     		<xsl:value-of select="Gatunek" />
                     	</td>
                     	<td>
-                    		<xsl:value-of select="Cena" />
+                    		<xsl:value-of select="concat(Cena, ' ', Cena/@Waluta)" />
                     	</td>
                     	<td>
                     		<xsl:value-of select="RodzajOkładki"/>

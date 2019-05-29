@@ -133,7 +133,8 @@
 					<xsl:value-of select="@Gatunek" />
 				</xsl:element>
 				<xsl:element name="Cena">
-					<xsl:value-of select="concat(Cena, ' ', Cena/@Waluta)" />
+					<xsl:attribute name="Waluta" select="Cena/@Waluta"/>
+					<xsl:value-of select="Cena" />
 				</xsl:element>
 				<xsl:element name="RodzajOkładki">
 					<xsl:value-of select="RodzajOkładki/@Rodzaj" />

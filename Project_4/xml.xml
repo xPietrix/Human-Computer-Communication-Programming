@@ -95,7 +95,7 @@
          <Autor>Christopher Paolini Testowy</Autor>
          <DataWydania> 2008-09-20 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 29.69  PLN</Cena>
+         <Cena Waluta="PLN"> 29.69 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -103,7 +103,7 @@
          <Autor>Kennedy Elle</Autor>
          <DataWydania> 2016-07-04 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 12.89  USD</Cena>
+         <Cena Waluta="USD"> 12.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -111,7 +111,7 @@
          <Autor>Christopher Paolini Testowy</Autor>
          <DataWydania> 2005-02-13 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 9.99  EUR</Cena>
+         <Cena Waluta="EUR"> 9.99 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -119,7 +119,7 @@
          <Autor>J. K. Rowling</Autor>
          <DataWydania> 2000-07-08 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 12.89  USD</Cena>
+         <Cena Waluta="USD"> 12.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -127,7 +127,7 @@
          <Autor>J. K. Rowling</Autor>
          <DataWydania> 2005-01-31 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 29.99  PLN</Cena>
+         <Cena Waluta="PLN"> 29.99 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -135,7 +135,7 @@
          <Autor>Ewa Stachniak</Autor>
          <DataWydania> 2013-04-17 </DataWydania>
          <Gatunek>Historyczna</Gatunek>
-         <Cena> 28.89  PLN</Cena>
+         <Cena Waluta="PLN"> 28.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -143,7 +143,7 @@
          <Autor>Henryk Sienkiewicz</Autor>
          <DataWydania> 2015-07-01 </DataWydania>
          <Gatunek>Historyczna</Gatunek>
-         <Cena> 28.79  PLN</Cena>
+         <Cena Waluta="PLN"> 28.79 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -151,7 +151,7 @@
          <Autor>Meghan March</Autor>
          <DataWydania> 2018-02-12 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 8.59  EUR</Cena>
+         <Cena Waluta="EUR"> 8.59 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -159,7 +159,7 @@
          <Autor>Camilla Lackberg</Autor>
          <DataWydania> 2011-09-07 </DataWydania>
          <Gatunek>Kryminał</Gatunek>
-         <Cena> 12.89  USD</Cena>
+         <Cena Waluta="USD"> 12.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -167,7 +167,7 @@
          <Autor>Peter Brett</Autor>
          <DataWydania> 2008-09-01 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 42.49  PLN</Cena>
+         <Cena Waluta="PLN"> 42.49 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -175,7 +175,7 @@
          <Autor>Henryk Sienkiewicz</Autor>
          <DataWydania> 2010-04-03 </DataWydania>
          <Gatunek>Historyczna</Gatunek>
-         <Cena> 23.88  PLN</Cena>
+         <Cena Waluta="PLN"> 23.88 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -183,7 +183,7 @@
          <Autor>Jo Nesbo-Myślnikowy</Autor>
          <DataWydania> 2014-06-04 </DataWydania>
          <Gatunek>Kryminał</Gatunek>
-         <Cena> 13.89  USD</Cena>
+         <Cena Waluta="USD"> 13.89 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -191,7 +191,7 @@
          <Autor>Meghan March</Autor>
          <DataWydania> 2014-09-23 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 9.89  EUR</Cena>
+         <Cena Waluta="EUR"> 9.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -199,7 +199,7 @@
          <Autor>Kennedy Elle</Autor>
          <DataWydania> 2019-03-04 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 11.79  USD</Cena>
+         <Cena Waluta="USD"> 11.79 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -207,7 +207,7 @@
          <Autor>Jo Nesbo-Myślnikowy</Autor>
          <DataWydania> 2017-03-29 </DataWydania>
          <Gatunek>Kryminał</Gatunek>
-         <Cena> 34.00  PLN</Cena>
+         <Cena Waluta="PLN"> 34.00 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -215,7 +215,7 @@
          <Autor>Peter Brett</Autor>
          <DataWydania> 2010-03-27 </DataWydania>
          <Gatunek>Fantasy</Gatunek>
-         <Cena> 12.89  USD</Cena>
+         <Cena Waluta="USD"> 12.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -223,7 +223,7 @@
          <Autor>Joyo Moyes</Autor>
          <DataWydania> 2019-01-16 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 19.89  PLN</Cena>
+         <Cena Waluta="PLN"> 19.89 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
       <Książka>
@@ -231,7 +231,7 @@
          <Autor>Alexandre Dumas</Autor>
          <DataWydania> 2016-02-12 </DataWydania>
          <Gatunek>Historyczna</Gatunek>
-         <Cena> 11.39  USD</Cena>
+         <Cena Waluta="USD"> 11.39 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -239,7 +239,7 @@
          <Autor>Remigiusz Mróz</Autor>
          <DataWydania> 2019-03-13 </DataWydania>
          <Gatunek>Kryminał</Gatunek>
-         <Cena> 29.89  EUR</Cena>
+         <Cena Waluta="EUR"> 29.89 </Cena>
          <RodzajOkładki>Twarda</RodzajOkładki>
       </Książka>
       <Książka>
@@ -247,7 +247,7 @@
          <Autor>Joyo Moyes</Autor>
          <DataWydania> 2016-11-09 </DataWydania>
          <Gatunek>Obyczajowa</Gatunek>
-         <Cena> 14.19  USD</Cena>
+         <Cena Waluta="USD"> 14.19 </Cena>
          <RodzajOkładki>Miękka</RodzajOkładki>
       </Książka>
    </ListaKsiążek>
@@ -265,8 +265,8 @@
          <EUR>58.36</EUR>
       </SumaWydanychPieniędzy>
       <DataWygenerowaniaRaportu>
-         <Data>09/05/2019</Data>
-         <Czas>18:12, GMT+02:00</Czas>
+         <Data>29/05/2019</Data>
+         <Czas>18:32, GMT+02:00</Czas>
       </DataWygenerowaniaRaportu>
    </Podsumowanie>
 </Biblioteka>

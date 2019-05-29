@@ -14,12 +14,16 @@
             </fo:layout-master-set>
             <fo:page-sequence master-reference="PageMaster">
                 <fo:flow flow-name="xsl-region-body" >
-                    <fo:block>
-                        <xsl:apply-templates select="OpisDokumentu"/>
-                    </fo:block>
-                    <fo:table>
-                        <xsl:apply-templates select="AutorzyKsiążek"/>
-                    </fo:table>
+                    <xsl:apply-templates select="OpisDokumentu"/>
+                    
+                    <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Autorzy książek</fo:block>
+                    <xsl:apply-templates select="AutorzyKsiążek"/>
+                    
+                    <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Książki</fo:block>
+                    <xsl:apply-templates select="ListaKsiążek"/>
+                    
+                    <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Podsumowanie</fo:block>
+                    <xsl:apply-templates select="Podsumowanie"/>
                 </fo:flow>
             </fo:page-sequence>
         </fo:root>
@@ -48,28 +52,114 @@
     </xsl:template>
     
     <xsl:template match="AutorzyKsiążek">
-        <fo:table-header>
-            <fo:table-row>
-                <fo:table-cell border="solid black"><fo:block>Imię i nazwisko</fo:block></fo:table-cell>
-                <fo:table-cell border="solid black"><fo:block>Kraj pochodzenia</fo:block></fo:table-cell>
-                <fo:table-cell border="solid black"><fo:block>Miejsce urodzenia</fo:block></fo:table-cell>
-            </fo:table-row>
-        </fo:table-header>
-        <fo:table-body>
-            <xsl:for-each select="Autor">
+        <fo:table>
+            <fo:table-header>
                 <fo:table-row>
-                    <fo:table-cell border="solid black">
-                        <fo:block><xsl:value-of select="//Autor/Imię, //Autor/Nazwisko"/></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell border="solid black">
-                        <fo:block><xsl:value-of select="//Autor/MiejsceUrodzenia"/></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell border="solid black">
-                        <fo:block><xsl:value-of select="//Autor/DataUrodzenia"/></fo:block>
-                    </fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Imię i nazwisko</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Miejsce urodzenia</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Data urodzenia</fo:block></fo:table-cell>
                 </fo:table-row>
-            </xsl:for-each>
-        </fo:table-body>
+            </fo:table-header>
+            <fo:table-body>
+                <xsl:for-each select="Autor">
+                    <fo:table-row>
+                        <fo:table-cell border="solid black">
+                            <fo:block>
+                                <xsl:value-of select="concat(Imię,' ', Nazwisko)"/>
+                            </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="solid black">
+                            <fo:block><xsl:value-of select="MiejsceUrodzenia"/></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="solid black">
+                            <fo:block><xsl:value-of select="DataUrodzenia"/></fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </xsl:for-each>
+            </fo:table-body>
+        </fo:table>
+    </xsl:template>
+    
+    <xsl:template match="ListaKsiążek">
+        <fo:table>
+            <fo:table-header>
+                <fo:table-row>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Tytuł</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Autor</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Data wydania</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Gatunek</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Cena</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Rodzaj okładki</fo:block></fo:table-cell>
+                </fo:table-row>
+            </fo:table-header>
+            <fo:table-body>
+                <xsl:for-each select="Książka">
+                    <fo:table-row>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="Tytuł"/></fo:block></fo:table-cell>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="Autor"/></fo:block></fo:table-cell>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="DataWydania"/></fo:block></fo:table-cell>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="Gatunek"/></fo:block></fo:table-cell>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="Cena"/></fo:block></fo:table-cell>
+                        <fo:table-cell border="solid black"><fo:block><xsl:value-of select="RodzajOkładki"/></fo:block></fo:table-cell>
+                    </fo:table-row>
+                </xsl:for-each>
+            </fo:table-body>
+        </fo:table>
+    </xsl:template>
+    
+    <xsl:template match="Podsumowanie">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="LiczebnośćKsiążek">
+        <fo:block margin-top="20px" margin-left="50px">Liczebność książek</fo:block>
+        <fo:table>
+            <fo:table-header>
+                <fo:table-row>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Wszystkich Książek</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Książek Fantasy</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Książek Kryminalnych</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Książek Obyczajowych</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">Książek Historycznych</fo:block></fo:table-cell>
+                </fo:table-row>
+            </fo:table-header>
+            <fo:table-body>
+                <fo:table-row>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="WszystkichKsiążek"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="KsiążekFantasy"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="KsiążekKryminalnych"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="KsiążekObyczajowych"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="KsiążekHistorycznych"/></fo:block></fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+        </fo:table>
+    </xsl:template>
+    
+    <xsl:template match="SumaWydanychPieniędzy">
+        <fo:block margin-top="50px" margin-left="50px">Suma wydanych pieniędzy</fo:block>
+        <fo:table>
+            <fo:table-header>
+                <fo:table-row>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">PLN</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">USD</fo:block></fo:table-cell>
+                    <fo:table-cell border="thick solid black"><fo:block font-weight="bold">EUR</fo:block></fo:table-cell>
+                </fo:table-row>
+            </fo:table-header>
+            <fo:table-body>
+                <fo:table-row>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="PLN"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="USD"/></fo:block></fo:table-cell>
+                    <fo:table-cell border="solid black"><fo:block><xsl:value-of select="EUR"/></fo:block></fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+        </fo:table>
+    </xsl:template>
+    
+    <xsl:template match="DataWygenerowaniaRaportu">
+        <fo:block border="solid black" margin-top="50px" text-align="center">
+            <fo:block>Data wygenerowania raportu</fo:block>
+            <fo:block><xsl:value-of select="concat(Data, ' ', Czas)"/></fo:block>
+        </fo:block>
     </xsl:template>
     
 </xsl:stylesheet >
