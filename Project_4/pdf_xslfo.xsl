@@ -8,7 +8,7 @@
          <fo:region-body margin="20mm 0mm 20mm 0mm"/>
       </fo:simple-page-master>
    </fo:layout-master-set>
-   <fo:page-sequence master-reference="PageMaster">
+   <fo:page-sequence master-reference="PageMaster" font-family="Comic Sans MS">
       <fo:flow flow-name="xsl-region-body">
          <fo:block text-align="center" font-weight="bold"> Dokument przedstawia zestawienie książek z domowej biblioteki </fo:block>
          <fo:block text-align="right">

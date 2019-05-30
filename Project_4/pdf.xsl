@@ -12,8 +12,8 @@
                     <fo:region-body margin="20mm 0mm 20mm 0mm"/>
                 </fo:simple-page-master>
             </fo:layout-master-set>
-            <fo:page-sequence master-reference="PageMaster">
-                <fo:flow flow-name="xsl-region-body" >
+            <fo:page-sequence master-reference="PageMaster" font-family="Comic Sans MS">
+                <fo:flow flow-name="xsl-region-body">
                     <xsl:apply-templates select="OpisDokumentu"/>
                     
                     <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Autorzy książek</fo:block>
