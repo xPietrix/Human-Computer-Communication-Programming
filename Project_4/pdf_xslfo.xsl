@@ -3,14 +3,20 @@
    <fo:layout-master-set>
       <fo:simple-page-master page-height="297mm"
                              page-width="210mm"
-                             margin="5mm 25mm 5mm 25mm"
+                             margin="0mm 25mm 5mm 25mm"
                              master-name="PageMaster">
          <fo:region-body margin="20mm 0mm 20mm 0mm"/>
+         <fo:region-after extent="2%"/>
       </fo:simple-page-master>
    </fo:layout-master-set>
-   <fo:page-sequence master-reference="PageMaster" font-family="Comic Sans MS">
+   <fo:page-sequence master-reference="PageMaster"
+                     font-family="Tahoma"
+                     text-align="center">
+      <fo:static-content flow-name="xsl-region-after">
+         <fo:block text-align="center" font-size="20px">[ Strona <fo:page-number/> ]</fo:block>
+      </fo:static-content>
       <fo:flow flow-name="xsl-region-body">
-         <fo:block text-align="center" font-weight="bold"> Dokument przedstawia zestawienie książek z domowej biblioteki </fo:block>
+         <fo:block text-align="center" font-weight="bold" font-size="20pt"> Dokument przedstawia zestawienie książek z domowej biblioteki </fo:block>
          <fo:block text-align="right">
             <fo:inline>Piotr</fo:inline>
             <fo:inline>Wasiak</fo:inline>
@@ -21,8 +27,11 @@
             <fo:inline>Kubicki</fo:inline>
             <fo:inline>210238</fo:inline>
          </fo:block>
-         <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Autorzy książek</fo:block>
+         <fo:block margin-top="50px" font-size="20pt">Autorzy książek</fo:block>
          <fo:table>
+            <fo:table-column column-number="1"/>
+            <fo:table-column column-number="2" column-width="25%"/>
+            <fo:table-column column-number="3" column-width="25%"/>
             <fo:table-header>
                <fo:table-row>
                   <fo:table-cell border="thick solid black">
@@ -171,8 +180,14 @@
                </fo:table-row>
             </fo:table-body>
          </fo:table>
-         <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Książki</fo:block>
+         <fo:block margin-top="50px" font-size="20pt">Książki</fo:block>
          <fo:table>
+            <fo:table-column column-number="1"/>
+            <fo:table-column column-number="2"/>
+            <fo:table-column column-number="3" column-width="15%"/>
+            <fo:table-column column-number="4" column-width="15%"/>
+            <fo:table-column column-number="5" column-width="10%"/>
+            <fo:table-column column-number="6" column-width="12%"/>
             <fo:table-header>
                <fo:table-row>
                   <fo:table-cell border="thick solid black">
@@ -598,9 +613,14 @@
                </fo:table-row>
             </fo:table-body>
          </fo:table>
-         <fo:block margin-top="50px" margin-left="50px" font-size="15pt">Podsumowanie</fo:block>
-         <fo:block margin-top="20px" margin-left="50px">Liczebność książek</fo:block>
+         <fo:block margin-top="50px" font-size="20pt">Podsumowanie</fo:block>
+         <fo:block margin-top="10px" text-align="center">Liczebność książek</fo:block>
          <fo:table>
+            <fo:table-column column-number="1" column-width="20%"/>
+            <fo:table-column column-number="2"/>
+            <fo:table-column column-number="3"/>
+            <fo:table-column column-number="4"/>
+            <fo:table-column column-number="5"/>
             <fo:table-header>
                <fo:table-row>
                   <fo:table-cell border="thick solid black">
@@ -640,7 +660,7 @@
                </fo:table-row>
             </fo:table-body>
          </fo:table>
-         <fo:block margin-top="50px" margin-left="50px">Suma wydanych pieniędzy</fo:block>
+         <fo:block margin-top="10px">Suma wydanych pieniędzy</fo:block>
          <fo:table>
             <fo:table-header>
                <fo:table-row>
@@ -669,8 +689,8 @@
                </fo:table-row>
             </fo:table-body>
          </fo:table>
-         <fo:block border="solid black" margin-top="50px" text-align="center">
-            <fo:block>Data wygenerowania raportu</fo:block>
+         <fo:block margin-top="10px">Data wygenerowania raportu</fo:block>
+         <fo:block border="solid black" text-align="center">
             <fo:block>29/05/2019 18:32, GMT+02:00</fo:block>
          </fo:block>
       </fo:flow>
