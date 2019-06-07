@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="./biblioteka.css" type="text/css"?>
+
+<Biblioteka
+xmlns="http://www.example.org/typy"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/typy file:./biblioteka.xsd" >
+	<OpisDokumentu> 
+		<TytułDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki </TytułDokumentu>
+		<Autorzy>
+			<AutorDokumentu Indeks="210346">
+				<ImięAutora>Piotr</ImięAutora>
+				<NazwiskoAutora>Wasiak</NazwiskoAutora>
+			</AutorDokumentu>
+			<AutorDokumentu Indeks="210238">
+				<ImięAutora>Mateusz</ImięAutora>
+				<NazwiskoAutora>Kubicki</NazwiskoAutora>
+			</AutorDokumentu>
+		</Autorzy>
+	</OpisDokumentu>
+	
+	<AutorzyKsiążek>
+		<Autor Id="a1">
+			<Imię>J. K.</Imię>
+			<Nazwisko>Rowling</Nazwisko>
+			<DataUrodzenia>2004-01-31</DataUrodzenia>
+			<MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a2">
+			<Imię>Peter</Imię>
+			<Nazwisko>Brett</Nazwisko>
+			<DataUrodzenia>1973-02-08</DataUrodzenia>
+			<MiejsceUrodzenia>USA</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a3">
+			<Imię>Christopher</Imię>
+			<Nazwisko>Paolini Testowy</Nazwisko>
+			<DataUrodzenia>1983-11-17</DataUrodzenia>
+			<MiejsceUrodzenia>USA</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a4">
+			<Imię>Jo</Imię>
+			<Nazwisko>Nesbo-Myślnikowy</Nazwisko>
+			<DataUrodzenia>1960-03-29</DataUrodzenia>
+			<MiejsceUrodzenia>Norwegia</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a5">
+			<Imię>Camilla</Imię>
+			<Nazwisko>Lackberg</Nazwisko>
+			<DataUrodzenia>1974-07-30</DataUrodzenia>
+			<MiejsceUrodzenia>Szwecja</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a6">
+			<Imię>Remigiusz</Imię>
+			<Nazwisko>Mróz</Nazwisko>
+			<DataUrodzenia> 1987-01-15 </DataUrodzenia>
+			<MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a7">
+			<Imię>Joyo</Imię>
+			<Nazwisko>Moyes</Nazwisko>
+			<DataUrodzenia> 1969-08-04 </DataUrodzenia>
+			<MiejsceUrodzenia>Wielka Brytania</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a8">
+			<Imię>Kennedy</Imię>
+			<Nazwisko>Elle</Nazwisko>
+			<DataUrodzenia>1982-01-19</DataUrodzenia>
+			<MiejsceUrodzenia>Kanada</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a9">
+			<Imię>Meghan</Imię>
+			<Nazwisko>March</Nazwisko>
+			<DataUrodzenia> 1983-04-15 </DataUrodzenia>
+			<MiejsceUrodzenia>USA</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a10">
+			<Imię>Henryk</Imię>
+			<Nazwisko>Sienkiewicz</Nazwisko>
+			<DataUrodzenia> 1846-05-05 </DataUrodzenia>
+			<MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a11">
+			<Imię>Alexandre</Imię>
+			<Nazwisko>Dumas</Nazwisko>
+			<DataUrodzenia> 1802-07-24 </DataUrodzenia>
+			<MiejsceUrodzenia>Francja</MiejsceUrodzenia>
+		</Autor>
+		<Autor Id="a12">
+			<Imię>Ewa</Imię>
+			<Nazwisko>Stachniak</Nazwisko>
+			<DataUrodzenia> 1952-11-27 </DataUrodzenia>
+			<MiejsceUrodzenia>Polska</MiejsceUrodzenia>
+		</Autor>
+		
+		
+	</AutorzyKsiążek>
+	
+	
+	<ListaKsiążek>
+
+		<Książka Autor="a1" Gatunek="Fantasy" IdKsiążki="k1">
+			<Tytuł>Harry Potter I Czara Ognia</Tytuł>
+			<DataWydania> 2000-07-08 </DataWydania>
+			<Cena Waluta="USD"> 12.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a1" Gatunek="Fantasy" IdKsiążki="k2">
+			<Tytuł>Harry Potter I Zakon Feniksa</Tytuł>
+			<DataWydania> 2005-01-31 </DataWydania>
+			<Cena Waluta="PLN"> 29.99 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a2" Gatunek="Fantasy" IdKsiążki="k3">
+			<Tytuł>Malowany Człowiek</Tytuł>
+			<DataWydania> 2008-09-01 </DataWydania>
+			<Cena Waluta="PLN"> 42.49 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a2" Gatunek="Fantasy" IdKsiążki="k4">
+			<Tytuł>Pustynna Włócznia</Tytuł>
+			<DataWydania> 2010-03-27 </DataWydania>
+			<Cena Waluta="USD"> 12.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a3" Gatunek="Fantasy" IdKsiążki="k5">
+			<Tytuł>Eragon</Tytuł>
+			<DataWydania> 2005-02-13 </DataWydania>
+			<Cena Waluta="EUR"> 9.99 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a3" Gatunek="Fantasy" IdKsiążki="k6">
+			<Tytuł>Brisingr</Tytuł>
+			<DataWydania> 2008-09-20 </DataWydania>
+			<Cena Waluta="PLN"> 29.69 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+	
+		<Książka Autor="a4" Gatunek="Kryminał" IdKsiążki="k7">
+			<Tytuł>Pierwszy śnieg</Tytuł>
+			<DataWydania> 2014-06-04 </DataWydania>
+			<Cena Waluta="USD"> 13.89 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a4" Gatunek="Kryminał" IdKsiążki="k8">
+			<Tytuł>Pragnienie</Tytuł>
+			<DataWydania> 2017-03-29 </DataWydania>
+			<Cena Waluta="PLN"> 34.00 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a5" Gatunek="Kryminał" IdKsiążki="k9">
+			<Tytuł>Księżniczka Z Lodu</Tytuł>
+			<DataWydania> 2011-09-07 </DataWydania>
+			<Cena Waluta="USD"> 12.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a6" Gatunek="Kryminał" IdKsiążki="k10">
+			<Tytuł>Umorzenie</Tytuł>
+			<DataWydania> 2019-03-13 </DataWydania>
+			<Cena Waluta="EUR"> 29.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a7" Gatunek="Obyczajowa" IdKsiążki="k11">
+			<Tytuł>Srebrna Zatoka</Tytuł>
+			<DataWydania> 2019-01-16 </DataWydania>
+			<Cena Waluta="PLN"> 19.89 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a7" Gatunek="Obyczajowa" IdKsiążki="k12"> 
+			<Tytuł>Zanim się pojawiłeś</Tytuł>
+			<DataWydania> 2016-11-09 </DataWydania>
+			<Cena Waluta="USD"> 14.19 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a8" Gatunek="Obyczajowa" IdKsiążki="k13">
+			<Tytuł>Pościg</Tytuł>
+			<DataWydania> 2019-03-04 </DataWydania>
+			<Cena Waluta="USD"> 11.79 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a8" Gatunek="Obyczajowa" IdKsiążki="k14">
+			<Tytuł>Błąd</Tytuł>
+			<DataWydania> 2016-07-04 </DataWydania>
+			<Cena Waluta="USD"> 12.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a9" Gatunek="Obyczajowa" IdKsiążki="k15">
+			<Tytuł>Król bez skrupułów</Tytuł>
+			<DataWydania> 2018-02-12 </DataWydania>
+			<Cena Waluta="EUR"> 8.59 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a9" Gatunek="Obyczajowa" IdKsiążki="k16">
+			<Tytuł>Pod tą maską</Tytuł>
+			<DataWydania> 2014-09-23 </DataWydania>
+			<Cena Waluta="EUR"> 9.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+		<Książka Autor="a10" Gatunek="Historyczna" IdKsiążki="k17">
+			<Tytuł>Krzyżacy</Tytuł>
+			<DataWydania> 2015-07-01 </DataWydania>
+			<Cena Waluta="PLN"> 28.79 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+
+		<Książka Autor="a10" Gatunek="Historyczna" IdKsiążki="k18">
+			<Tytuł>Pan Wołodyjowski</Tytuł>
+			<DataWydania> 2010-04-03 </DataWydania>
+			<Cena Waluta="PLN"> 23.88 </Cena>
+			<RodzajOkładki Rodzaj="Miękka"/>
+		</Książka>
+		
+		<Książka Autor="a11" Gatunek="Historyczna" IdKsiążki="k19">
+			<Tytuł>Trzej muszkieterowie</Tytuł>
+			<DataWydania> 2016-02-12 </DataWydania>
+			<Cena Waluta="USD"> 11.39 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		<Książka Autor="a12" Gatunek="Historyczna" IdKsiążki="k20">
+			<Tytuł>Harry Potter i Czara Ognia</Tytuł>
+			<DataWydania> 2013-04-17 </DataWydania>
+			<Cena Waluta="PLN"> 28.89 </Cena>
+			<RodzajOkładki Rodzaj="Twarda"/>
+		</Książka>
+		
+	</ListaKsiążek>
+	
+</Biblioteka>

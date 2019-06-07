@@ -1,0 +1,62 @@
+﻿<Window x:Class="DomowaBiblioteka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DomowaBiblioteka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl Name="TabControl">
+            <TabItem Header="Autorzy">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="AutorzyListView" Margin="30">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5" Text="{Binding ID}"/>
+                                    <TextBlock Margin="5" Text="{Binding Imię}"/>
+                                    <TextBlock Margin="5" Text="{Binding Nazwisko}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Książki">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="KsiążkiListView" Margin="30">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5" Text="{Binding IdKsiążki}"/>
+                                    <TextBlock Margin="5" Text="{Binding Tytuł}"/>
+                                    <TextBlock Margin="5" Text="{Binding Gatunek}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Opis Dokumentu">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="OpisListView" Margin="30">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5" Text="{Binding IdKsiążki}"/>
+                                    <TextBlock Margin="5" Text="{Binding Tytuł}"/>
+                                    <TextBlock Margin="5" Text="{Binding Gatunek}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wczytywanie" Visibility="Hidden">
+                
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
