@@ -25,7 +25,7 @@ namespace DomowaBiblioteka
             OpenApplication();
             AutorzyListView.ItemsSource = Biblioteka.Autorzy;
             KsiążkiListView.ItemsSource = Biblioteka.Książki;
-            OpisListView.ItemsSource = Biblioteka.OpisDokumentu;
+            //OpisListView.ItemsSource = Biblioteka.OpisDokumentu;
         }
 
         private void OpenApplication()
