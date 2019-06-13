@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace DomowaBiblioteka
 {
@@ -18,14 +20,15 @@ namespace DomowaBiblioteka
             Biblioteka = new Biblioteka();
             XML = new XmlManager(@"../../Data/biblioteka.xml", @"../../Data/biblioteka.xsd");
             TabControl.Visibility = Visibility.Hidden;
-            TabControl.SelectedIndex = 3;
+            TabControl.SelectedIndex = 4;
 
             //MessageBoxResult result = MessageBox.Show("Za chwilę nastąpi uruchomienie aplikacji...\n\nAutorzy:\nMateusz Kubicki (210238)\nPiotr Wasiak (210346)", "Otwieranie", MessageBoxButton.OK);
 
             OpenApplication();
             AutorzyListView.ItemsSource = Biblioteka.Autorzy;
             KsiążkiListView.ItemsSource = Biblioteka.Książki;
-            //OpisListView.ItemsSource = Biblioteka.OpisDokumentu;
+            OpisListView.ItemsSource = Biblioteka.OpisDokumentu.Autorzy;
+
         }
 
         private void OpenApplication()
@@ -42,6 +45,191 @@ namespace DomowaBiblioteka
                 MessageBox.Show("Pomyślnie wczytano plik " + XML.XmlFile.Name + ". \nDane zostały załadowane");
             }
         }
+
+        private void KsiążkiListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        #region AutorPrzyciski
+
+        private void DodajAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(EdytujAutoraPopup.IsOpen) EdytujAutoraPopup.IsOpen = false;
+            if(!DodajAutoraPopup.IsOpen)
+            {
+                DodajAutoraPopup.IsOpen = false;
+                DodajAutoraPopup.PlacementTarget = sender as UIElement;
+                DodajAutoraPopup.Placement = PlacementMode.Right;
+                DodajAutoraPopup.AllowsTransparency = true;
+                DodajAutoraPopup.PopupAnimation = PopupAnimation.Fade;
+                DodajAutoraPopup.IsOpen = true;
+            }
+        }
+
+        private void AnulujDodajAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            DodajAutoraPopup.IsOpen = false;
+        }
+
+        private void DodajDodajAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Biblioteka.Autorzy.Add(new AutorKsiążki
+            {
+                ID = DodajAutoraIdTextBox.Text,
+                Imię = DodajAutoraImięTextBox.Text,
+                Nazwisko = DodajAutoraNazwiskoTextBox.Text,
+                DataUrodzenia = DodajAutoraDataUrodzinDataPicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
+                MiejsceUrodzenia = DodajAutoraMiejsceUrodzeniaTextBox.Text
+            });
+
+            if (XML.ValidateXmlSchema(Biblioteka))
+            {
+                XML.SaveData(Biblioteka);
+                AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+                DodajAutoraPopup.IsOpen = false;
+                DodajAutoraIdTextBox.Text = "";
+                DodajAutoraImięTextBox.Text = "";
+                DodajAutoraNazwiskoTextBox.Text = "";
+                DodajAutoraDataUrodzinDataPicker.SelectedDate = null;
+                DodajAutoraMiejsceUrodzeniaTextBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+                Biblioteka = XML.LoadData();
+            }
+        }
+
+        private void EdytujAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (AutorzyListView.SelectedItem == null) return;
+            if (DodajAutoraPopup.IsOpen) DodajAutoraPopup.IsOpen = false;
+            if(!EdytujAutoraPopup.IsOpen && AutorzyListView.SelectedItem != null)
+            {
+                AutorKsiążki autor = (AutorKsiążki)AutorzyListView.SelectedItem;
+                EdytujAutoraPopup.IsOpen = false;
+                EdytujAutoraPopup.PlacementTarget = sender as UIElement;
+                EdytujAutoraPopup.Placement = PlacementMode.Right;
+                EdytujAutoraPopup.AllowsTransparency = true;
+                EdytujAutoraPopup.PopupAnimation = PopupAnimation.Fade;
+                EdytujAutoraPopup.IsOpen = true;
+
+                DodajAutoraIdTextBox.Text = autor.ID;
+                DodajAutoraImięTextBox.Text = autor.Imię;
+                DodajAutoraNazwiskoTextBox.Text = autor.Nazwisko;
+                DodajAutoraDataUrodzinDataPicker.SelectedDate = DateTime.Parse(autor.DataUrodzenia);
+                DodajAutoraMiejsceUrodzeniaTextBox.Text = autor.MiejsceUrodzenia;
+            }
+        }
+
+        private void AnulujEdytujAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            EdytujAutoraPopup.IsOpen = false;
+        }
+
+        private void ZastosujEdytujAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+            //AutorKsiążki autorKsiążki = new AutorKsiążki
+            //{
+            //    ID = DodajAutoraIdTextBox.Text,
+            //    Imię = DodajAutoraImięTextBox.Text,
+            //    Nazwisko = DodajAutoraNazwiskoTextBox.Text,
+            //    DataUrodzenia = DodajAutoraDataUrodzinDataPicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
+            //    MiejsceUrodzenia = DodajAutoraMiejsceUrodzeniaTextBox.Text
+            //});
+
+            //this.Biblioteka.Autorzy.Find(a => a.ID == DodajAutoraIdTextBox.Text) = new AutorKsiążki {
+            //    ID = DodajAutoraIdTextBox.Text,
+            //    Imię = DodajAutoraImięTextBox.Text,
+            //    Nazwisko = DodajAutoraNazwiskoTextBox.Text,
+            //    DataUrodzenia = DodajAutoraDataUrodzinDataPicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
+            //    MiejsceUrodzenia = DodajAutoraMiejsceUrodzeniaTextBox.Text
+            //};
+
+            //if (XML.ValidateXmlSchema(Biblioteka))
+            //{
+            //    XML.SaveData(Biblioteka);
+            //    AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+            //    DodajAutoraPopup.IsOpen = false;
+            //    DodajAutoraIdTextBox.Text = "";
+            //    DodajAutoraImięTextBox.Text = "";
+            //    DodajAutoraNazwiskoTextBox.Text = "";
+            //    DodajAutoraDataUrodzinDataPicker.SelectedDate = null;
+            //    DodajAutoraMiejsceUrodzeniaTextBox.Text = "";
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+            //    Biblioteka = XML.LoadData();
+            //}
+        }
+
+        private void UsuńAutoraButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+        #region KsiążkaPrzyciski
+
+        private void DodajKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (EdytujKsiążkęPopup.IsOpen) EdytujKsiążkęPopup.IsOpen = false;
+            if (!DodajKsiążkęPopup.IsOpen)
+            {
+                DodajKsiążkęPopup.IsOpen = false;
+                DodajKsiążkęPopup.PlacementTarget = sender as UIElement;
+                DodajKsiążkęPopup.Placement = PlacementMode.Right;
+                DodajKsiążkęPopup.AllowsTransparency = true;
+                DodajKsiążkęPopup.PopupAnimation = PopupAnimation.Fade;
+                DodajKsiążkęPopup.IsOpen = true;
+            }
+        }
+
+        private void AnulujDodajKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+            DodajKsiążkęPopup.IsOpen = false;
+        }
+
+        private void DodajDodajKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DodajKsiążkęPopup.IsOpen) DodajKsiążkęPopup.IsOpen = false;
+            if (!EdytujKsiążkęPopup.IsOpen && KsiążkiListView.SelectedItem != null)
+            {
+                EdytujKsiążkęPopup.IsOpen = false;
+                EdytujKsiążkęPopup.PlacementTarget = sender as UIElement;
+                EdytujKsiążkęPopup.Placement = PlacementMode.Right;
+                EdytujKsiążkęPopup.AllowsTransparency = true;
+                EdytujKsiążkęPopup.PopupAnimation = PopupAnimation.Fade;
+                EdytujKsiążkęPopup.IsOpen = true;
+            }
+        }
+
+        private void AnulujEdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+            EdytujKsiążkęPopup.IsOpen = false;
+        }
+
+        private void ZastosujEdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UsuńKsiążkęButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+        #region Wczytywanie i zapisywanie
+
+        #endregion
+
 
         //private void Kliknięcie(object sender, MouseButtonEventArgs e)
         //{
@@ -83,7 +271,7 @@ namespace DomowaBiblioteka
         //    login = ProcessLogin(login);
         //    if (login == string.Empty) return;
 
-        //    /*Biblioteka.ListaOsóbList.FirstOrDefault().OsobaList.Add(new Osoba()
+        //    Biblioteka.ListaOsóbList.FirstOrDefault().OsobaList.Add(new Osoba()
         //    {
         //        Imie = ImieBox.Text,
         //        Nazwisko = NazwiskoBox.Text,
@@ -121,7 +309,7 @@ namespace DomowaBiblioteka
         //        MessageBox.Show("Edycja danych niezgodna z XML Schema!", "Błąd!");
         //        Biblioteka = XML.LoadData();
         //    }
-        //    */
+
         //}
 
         //private string ProcessLogin(string login)

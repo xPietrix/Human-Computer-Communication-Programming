@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace DomowaBiblioteka
 {
@@ -19,5 +20,13 @@ namespace DomowaBiblioteka
 
         [XmlElement("MiejsceUrodzenia", Namespace = "http://www.example.org/typy")]
         public string MiejsceUrodzenia { get; set; }
+
+        [XmlIgnore]
+        public List<Książka> Książki { get; set; }
+
+        public AutorKsiążki()
+        {
+            Książki = new List<Książka>();
+        }
     }
 }

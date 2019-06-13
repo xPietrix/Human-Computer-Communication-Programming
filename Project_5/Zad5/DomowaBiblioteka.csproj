@@ -72,8 +72,10 @@
     </ApplicationDefinition>
     <Compile Include="Model\AutorDokumentu.cs" />
     <Compile Include="Model\Biblioteka.cs" />
+    <Compile Include="Model\Cena.cs" />
     <Compile Include="Model\Książka.cs" />
     <Compile Include="Model\OpisDokumentu.cs" />
+    <Compile Include="Model\RodzajOkładki.cs" />
     <Compile Include="XmlManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

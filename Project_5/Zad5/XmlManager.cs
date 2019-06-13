@@ -29,37 +29,39 @@ namespace DomowaBiblioteka
                     biblioteka = (Biblioteka)Serializer.Deserialize(textReader);
                     textReader.Close();
                 }
+                //foreach (AutorKsiążki a in biblioteka.Autorzy) a.Książki.AddRange(biblioteka.Książki.FindAll(k => k.Autor == a.ID));
+                //foreach (Książka k in biblioteka.Książki) k.AutorKsiążki = biblioteka.Autorzy.Find(a => a.ID == k.Autor);
             }
             else throw new IOException();
 
             return biblioteka;
         }
 
-        public void SaveData(Biblioteka firma)
+        public void SaveData(Biblioteka biblioteka)
         {
             if (XmlFile.Exists) XmlFile.Delete();
 
             Stream stream = new FileStream(XmlFile.FullName, FileMode.Create);
-            Serializer.Serialize(stream, firma);
+            Serializer.Serialize(stream, biblioteka);
             stream.Close();
         }
 
-        public void SaveCopy(Biblioteka firma)
+        public void SaveCopy(Biblioteka biblioteka)
         {
             FileInfo tmp = new FileInfo("copy.xml");
 
             if (tmp.Exists) tmp.Delete();
 
             Stream stream = new FileStream(tmp.FullName, FileMode.Create);
-            Serializer.Serialize(stream, firma);
+            Serializer.Serialize(stream, biblioteka);
             stream.Close();
         }
 
-        public bool ValidateXmlSchema(Biblioteka firma)
+        public bool ValidateXmlSchema(Biblioteka biblioteka)
         {
             try
             {
-                SaveCopy(firma);
+                SaveCopy(biblioteka);
 
                 XmlDocument xmld = new XmlDocument();
                 string xmlText = File.ReadAllText("copy.xml");

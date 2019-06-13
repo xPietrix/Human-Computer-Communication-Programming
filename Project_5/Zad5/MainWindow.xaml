@@ -10,53 +10,223 @@
         <TabControl Name="TabControl">
             <TabItem Header="Autorzy">
                 <Grid Background="#FFE5E5E5">
-                    <ListView Name="AutorzyListView" Margin="30">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="5" Text="{Binding ID}"/>
-                                    <TextBlock Margin="5" Text="{Binding Imię}"/>
-                                    <TextBlock Margin="5" Text="{Binding Nazwisko}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="120*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Name="AutorzyListView" Margin="10,10,100,10" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="auto" Header="Id" DisplayMemberBinding="{Binding ID}"/>
+                                <GridViewColumn Width="auto" Header="Imię" DisplayMemberBinding="{Binding Imię}"/>
+                                <GridViewColumn Width="auto" Header="Nazwisko" DisplayMemberBinding="{Binding Nazwisko}"/>
+                                <GridViewColumn Width="auto" Header="Data urodzenia" DisplayMemberBinding="{Binding DataUrodzenia}"/>
+                                <GridViewColumn Width="auto" Header="Miejsc urodzenia" DisplayMemberBinding="{Binding MiejsceUrodzenia}"/>
+                            </GridView>
+                        </ListView.View>
                     </ListView>
+                    <Button Name="UsuńAutoraButton" Content="Usuń" HorizontalAlignment="Left" Margin="635,0,0,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="EdytujAutoraButton" Content="Edytuj" HorizontalAlignment="Left" Margin="635,0,0,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="DodajAutoraButton" Content="Dodaj" HorizontalAlignment="Left" Margin="635,0,0,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajAutoraButton_Click" Grid.Column="1"/>
+
+                    <Popup StaysOpen="True"  Width="350" Height="230" Name="DodajAutoraPopup" Grid.Column="1" Margin="152,80,218,81">
+                        <Popup.Child>
+                            <Border Background="LightGray">
+                                <GroupBox Header="Autor">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id:" Margin="10,5,10,5"/>
+                                            <TextBox Name="DodajAutoraIdTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Imię: " Margin="10,5,10,5"/>
+                                            <TextBox Name="DodajAutoraImięTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Nazwisko: " Margin="10,5,10,5"/>
+                                            <TextBox Name="DodajAutoraNazwiskoTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Data urodzenia: " Margin="10,5,10,5"/>
+                                            <DatePicker Name="DodajAutoraDataUrodzinDataPicker" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Miejsce urodzenia: " Margin="10,5,10,5"/>
+                                            <TextBox Name="DodajAutoraMiejsceUrodzeniaTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="DodajDodajAutoraButton" Content="Dodaj" HorizontalAlignment="Center" Width="75" Margin="155,5,0,0" RenderTransformOrigin="0.48,-0.1" Click="DodajDodajAutoraButton_Click"/>
+                                            <Button Name="AnulujDodajAutoraButton" Content="Anuluj" HorizontalAlignment="Center" Width="75" Margin="10,5,0,0" RenderTransformOrigin="0.48,-0.1" Click="AnulujDodajAutoraButton_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Border>
+                        </Popup.Child>
+                    </Popup>
+                    <Popup StaysOpen="True"  Width="350" Height="230" Name="EdytujAutoraPopup" Grid.Column="1" Margin="152,80,218,81">
+                        <Popup.Child>
+                            <Border Background="LightGray">
+                                <GroupBox Header="Autor">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id:" Margin="10,5,10,5"/>
+                                            <TextBox Name="EdytujAutoraIdTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Imię: " Margin="10,5,10,5"/>
+                                            <TextBox Name="EdytujAutoraImięTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Nazwisko: " Margin="10,5,10,5"/>
+                                            <TextBox Name="EdytujAutoraNazwiskoTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Data urodzenia: " Margin="10,5,10,5"/>
+                                            <DatePicker Name="EdytujAutoraDataUrodzeniaDatePicker" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Miejsce urodzenia: " Margin="10,5,10,5"/>
+                                            <TextBox Name="EdytujAutoraMiejsceUrodzeniaTextBox" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="ZastosujEdytujAutoraButton" Content="Zastosuj" HorizontalAlignment="Center" Width="75" Margin="155,5,0,0" RenderTransformOrigin="0.48,-0.1" Click="ZastosujEdytujAutoraButton_Click"/>
+                                            <Button Name="AnulujEdytujAutoraButton" Content="Anuluj" HorizontalAlignment="Center" Width="75" Margin="10,5,0,0" RenderTransformOrigin="0.48,-0.1" Click="AnulujEdytujAutoraButton_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Border>
+                        </Popup.Child>
+                    </Popup>
                 </Grid>
             </TabItem>
             <TabItem Header="Książki">
                 <Grid Background="#FFE5E5E5">
-                    <ListView Name="KsiążkiListView" Margin="30">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="5" Text="{Binding IdKsiążki}"/>
-                                    <TextBlock Margin="5" Text="{Binding Tytuł}"/>
-                                    <TextBlock Margin="5" Text="{Binding Gatunek}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
+                    <ListView Name="KsiążkiListView" Margin="10,10,100,10" SelectionChanged="KsiążkiListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="auto" Header="Id" DisplayMemberBinding="{Binding IdKsiążki}"/>
+                                <GridViewColumn Width="auto" Header="Tytuł" DisplayMemberBinding="{Binding Tytuł}"/>
+                                <GridViewColumn Width="auto" Header="Id autora" DisplayMemberBinding="{Binding Autor}"/>
+                                <GridViewColumn Width="auto" Header="Autor" DisplayMemberBinding="{Binding AutorKsiążki}"/>
+                                <GridViewColumn Width="auto" Header="Gatunek" DisplayMemberBinding="{Binding Gatunek}"/>
+                                <GridViewColumn Width="auto" Header="Data wydania" DisplayMemberBinding="{Binding DataWydania}"/>
+                                <GridViewColumn Width="auto" Header="Rodzaj okładki" DisplayMemberBinding="{Binding RodzajOkładki}"/>
+                                <GridViewColumn Width="auto" Header="Cena" DisplayMemberBinding="{Binding Cena}"/>
+                                <GridViewColumn Width="auto" Header="Waluta" DisplayMemberBinding="{Binding Waluta}"/>
+                            </GridView>
+                        </ListView.View>
                     </ListView>
+                    <Button Name="UsuńKsiążkęButton" Content="Usuń" HorizontalAlignment="Left" Margin="701,0,0,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńKsiążkęButton_Click"/>
+                    <Button Name="EdytujKsiążkęButton" Content="Edytuj" HorizontalAlignment="Left" Margin="701,0,0,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujKsiążkęButton_Click"/>
+                    <Button Name="DodajKsiążkęButton"  Content="Dodaj" HorizontalAlignment="Left" Margin="701,0,0,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajKsiążkęButton_Click"/>
+
+                    <Popup StaysOpen="True" Width="350" Name="DodajKsiążkęPopup">
+                        <Popup.Child>
+                            <Border Background="LightGray">
+                                <GroupBox Header="Książka">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Tytuł:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id autora:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Gatunek: " Margin="10,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Data wydania:" Margin="10,5,10,5"/>
+                                            <DatePicker Text="Test" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Rodzaj okładki:" Margin="10,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Cena:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Margin="0,0,175,0" Width="80"/>
+                                            <TextBlock Text="Waluta:" Margin="175,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="80"/>
+                                        </Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="DodajDodajKsiążkęButton" Content="Dodaj" HorizontalAlignment="Center" Width="75" Margin="155,5,0,5" RenderTransformOrigin="0.48,-0.1" Click="DodajDodajKsiążkęButton_Click"/>
+                                            <Button Name="AnulujDodajKsiążkęButton" Content="Anuluj" HorizontalAlignment="Center" Width="75" Margin="10,5,0,5" RenderTransformOrigin="0.48,-0.1" Click="AnulujDodajKsiążkęButton_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Border>
+                        </Popup.Child>
+                    </Popup>
+                    <Popup StaysOpen="True" Width="350" Name="EdytujKsiążkęPopup">
+                        <Popup.Child>
+                            <Border Background="LightGray">
+                                <GroupBox Header="Książka">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Tytuł:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Id autora:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Gatunek: " Margin="10,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Data wydania:" Margin="10,5,10,5"/>
+                                            <DatePicker Text="Test" HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Rodzaj okładki:" Margin="10,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                        </Grid>
+                                        <Grid Margin="5">
+                                            <TextBlock Text="Cena:" Margin="10,5,10,5"/>
+                                            <TextBox HorizontalAlignment="Right" Margin="0,0,175,0" Width="80"/>
+                                            <TextBlock Text="Waluta:" Margin="175,5,10,5"/>
+                                            <ComboBox HorizontalAlignment="Right" Width="80"/>
+                                        </Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="ZastosujEdytujKsiążkęButton" Content="Zastosuj" HorizontalAlignment="Center" Width="75" Margin="155,5,0,5" RenderTransformOrigin="0.48,-0.1" Click="ZastosujEdytujKsiążkęButton_Click"/>
+                                            <Button Name="AnulujEdytujKsiążkęButton" Content="Anuluj" HorizontalAlignment="Center" Width="75" Margin="10,5,0,5" RenderTransformOrigin="0.48,-0.1" Click="AnulujEdytujKsiążkęButton_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Border>
+                        </Popup.Child>
+                    </Popup>
                 </Grid>
+            </TabItem>
+            <TabItem Width="450" Visibility="Hidden"></TabItem>
+            <TabItem Header="Wczytywanie">
+
             </TabItem>
             <TabItem Header="Opis Dokumentu">
                 <Grid Background="#FFE5E5E5">
                     <ListView Name="OpisListView" Margin="30">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="5" Text="{Binding IdKsiążki}"/>
-                                    <TextBlock Margin="5" Text="{Binding Tytuł}"/>
-                                    <TextBlock Margin="5" Text="{Binding Gatunek}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding ImięAutora}"/>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding NazwiskoAutora}"/>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Indeks}"/>
+                            </GridView>
+                        </ListView.View>
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Wczytywanie" Visibility="Hidden">
-                
-            </TabItem>
         </TabControl>
-
     </Grid>
 </Window>
