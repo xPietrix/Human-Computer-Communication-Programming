@@ -28,7 +28,7 @@ namespace DomowaBiblioteka
         public Cena KosztKsiążki { get; set; }
 
         [XmlElement("RodzajOkładki", Namespace = "http://www.example.org/typy")]
-        public RodzajOkładki RodzajOkładki { get; set; }
+        public string RodzajOkładki { get; set; }
 
         //public enum Gatunki { Fantasy, Kryminał, Obyczajowa, Historyczna, Biografia, Dla_dzieci };
     }

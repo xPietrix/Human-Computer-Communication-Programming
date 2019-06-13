@@ -114,11 +114,11 @@ namespace DomowaBiblioteka
                 EdytujAutoraPopup.PopupAnimation = PopupAnimation.Fade;
                 EdytujAutoraPopup.IsOpen = true;
 
-                DodajAutoraIdTextBox.Text = autor.ID;
-                DodajAutoraImięTextBox.Text = autor.Imię;
-                DodajAutoraNazwiskoTextBox.Text = autor.Nazwisko;
-                DodajAutoraDataUrodzinDataPicker.SelectedDate = DateTime.Parse(autor.DataUrodzenia);
-                DodajAutoraMiejsceUrodzeniaTextBox.Text = autor.MiejsceUrodzenia;
+                EdytujAutoraIdTextBox.Text = autor.ID;
+                EdytujAutoraImięTextBox.Text = autor.Imię;
+                EdytujAutoraNazwiskoTextBox.Text = autor.Nazwisko;
+                EdytujAutoraDataUrodzeniaDatePicker.SelectedDate = DateTime.Parse(autor.DataUrodzenia);
+                EdytujAutoraMiejsceUrodzeniaTextBox.Text = autor.MiejsceUrodzenia;
             }
         }
 
@@ -166,7 +166,24 @@ namespace DomowaBiblioteka
 
         private void UsuńAutoraButton_Click(object sender, RoutedEventArgs e)
         {
+            AutorKsiążki autor = (AutorKsiążki)AutorzyListView.SelectedItem;
+            if (Biblioteka.Książki.Exists(k => k.Autor == autor.ID)) { MessageBox.Show("Nie można usunąć autora, ponieważ dokument nadal posiada książki tego autora. Usuń najpierw jego książki.", "Błąd"); return; }
 
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć autora " + autor.Imię + " " + autor.Nazwisko +"?", "Usuwanie", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                Biblioteka.Autorzy.RemoveAll(x => x.ID == autor.ID);
+                if (XML.ValidateXmlSchema(Biblioteka))
+                {
+                    Biblioteka.Autorzy.Remove(autor);
+                    XML.SaveData(Biblioteka);
+                }
+                else
+                {
+                    MessageBox.Show("Edycja danych niezgodna z XML Schema!", "Błąd!");
+                    Biblioteka = XML.LoadData();
+                }
+            }
         }
 
         #endregion
@@ -193,7 +210,37 @@ namespace DomowaBiblioteka
 
         private void DodajDodajKsiążkęButton_Click(object sender, RoutedEventArgs e)
         {
+            string gatunekKsiążki;
+            if (DodajKsiążkęGatunekComboBox.Text == "Dla_dzieci") gatunekKsiążki = "Dla dzieci";
+            else gatunekKsiążki = DodajKsiążkęGatunekComboBox.Text;
 
+            this.Biblioteka.Książki.Add(new Książka
+            {
+                IdKsiążki = DodajKsiążkęIdTextBox.Text,
+                Tytuł = DodajKsiążkęTytułTextBox.Text,
+                Autor = DodajKsiążkęIdAutoraTextBox.Text,
+                Gatunek = gatunekKsiążki,
+                DataWydania = DodajKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
+                RodzajOkładki = DodajKsiążkęRodzajOkładkiComboBox.Text,
+                KosztKsiążki = new Zad5.Model.Cena
+                {
+                    Wartość = DodajKsiążkęCenaTextBox.Text,
+                    Waluta = DodajKsiążkęWalutaComboBox.Text
+                }
+            });
+
+            if (XML.ValidateXmlSchema(Biblioteka))
+            {
+                XML.SaveData(Biblioteka);
+                KsiążkiListView.ItemsSource = Biblioteka.Książki;
+                DodajKsiążkęPopup.IsOpen = false;
+
+            }
+            else
+            {
+                MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+                Biblioteka = XML.LoadData();
+            }
         }
 
         private void EdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
@@ -222,7 +269,22 @@ namespace DomowaBiblioteka
 
         private void UsuńKsiążkęButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Książka książka = (Książka)KsiążkiListView.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć książkę " + książka.Tytuł + "?", "Usuwanie", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                Biblioteka.Książki.RemoveAll(x => x.IdKsiążki == książka.IdKsiążki);
+                if (XML.ValidateXmlSchema(Biblioteka))
+                {
+                    Biblioteka.Książki.Remove(książka);
+                    XML.SaveData(Biblioteka);
+                }
+                else
+                {
+                    MessageBox.Show("Edycja danych niezgodna z XML Schema!", "Błąd!");
+                    Biblioteka = XML.LoadData();
+                }
+            }
         }
 
         #endregion
