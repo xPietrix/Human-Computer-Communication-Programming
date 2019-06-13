@@ -27,8 +27,10 @@ namespace DomowaBiblioteka
             OpenApplication();
             AutorzyListView.ItemsSource = Biblioteka.Autorzy;
             KsiążkiListView.ItemsSource = Biblioteka.Książki;
+            TytułDokumentuTextBox.Text = Biblioteka.OpisDokumentu.Tytuł;
             OpisListView.ItemsSource = Biblioteka.OpisDokumentu.Autorzy;
-
+            XmlFileTextBox.Text = XML.XmlFile.FullName;
+            XmlSchemaFIleTextBox.Text = XML.SchemaFile.FullName;
         }
 
         private void OpenApplication()
@@ -84,14 +86,16 @@ namespace DomowaBiblioteka
 
             if (XML.ValidateXmlSchema(Biblioteka))
             {
-                XML.SaveData(Biblioteka);
-                AutorzyListView.ItemsSource = Biblioteka.Autorzy;
                 DodajAutoraPopup.IsOpen = false;
                 DodajAutoraIdTextBox.Text = "";
                 DodajAutoraImięTextBox.Text = "";
                 DodajAutoraNazwiskoTextBox.Text = "";
                 DodajAutoraDataUrodzinDataPicker.SelectedDate = null;
                 DodajAutoraMiejsceUrodzeniaTextBox.Text = "";
+
+                XML.SaveData(Biblioteka);
+                Biblioteka = XML.LoadData();
+                AutorzyListView.ItemsSource = Biblioteka.Autorzy;
             }
             else
             {
@@ -129,39 +133,32 @@ namespace DomowaBiblioteka
 
         private void ZastosujEdytujAutoraButton_Click(object sender, RoutedEventArgs e)
         {
-            //AutorKsiążki autorKsiążki = new AutorKsiążki
-            //{
-            //    ID = DodajAutoraIdTextBox.Text,
-            //    Imię = DodajAutoraImięTextBox.Text,
-            //    Nazwisko = DodajAutoraNazwiskoTextBox.Text,
-            //    DataUrodzenia = DodajAutoraDataUrodzinDataPicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
-            //    MiejsceUrodzenia = DodajAutoraMiejsceUrodzeniaTextBox.Text
-            //});
+            AutorKsiążki WybranyAutor = (AutorKsiążki)AutorzyListView.SelectedItem;
+            AutorKsiążki autorKsiążki = Biblioteka.Autorzy.Find(a => a.ID == WybranyAutor.ID);
+            autorKsiążki.ID = EdytujAutoraIdTextBox.Text;
+            autorKsiążki.Imię = EdytujAutoraImięTextBox.Text;
+            autorKsiążki.Nazwisko = EdytujAutoraNazwiskoTextBox.Text;
+            autorKsiążki.DataUrodzenia = EdytujAutoraDataUrodzeniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+            autorKsiążki.MiejsceUrodzenia = EdytujAutoraMiejsceUrodzeniaTextBox.Text;
 
-            //this.Biblioteka.Autorzy.Find(a => a.ID == DodajAutoraIdTextBox.Text) = new AutorKsiążki {
-            //    ID = DodajAutoraIdTextBox.Text,
-            //    Imię = DodajAutoraImięTextBox.Text,
-            //    Nazwisko = DodajAutoraNazwiskoTextBox.Text,
-            //    DataUrodzenia = DodajAutoraDataUrodzinDataPicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
-            //    MiejsceUrodzenia = DodajAutoraMiejsceUrodzeniaTextBox.Text
-            //};
+            if (XML.ValidateXmlSchema(Biblioteka))
+            {
+                EdytujAutoraPopup.IsOpen = false;
+                EdytujAutoraIdTextBox.Text = "";
+                EdytujAutoraImięTextBox.Text = "";
+                EdytujAutoraNazwiskoTextBox.Text = "";
+                EdytujAutoraDataUrodzeniaDatePicker.SelectedDate = null;
+                EdytujAutoraMiejsceUrodzeniaTextBox.Text = "";
 
-            //if (XML.ValidateXmlSchema(Biblioteka))
-            //{
-            //    XML.SaveData(Biblioteka);
-            //    AutorzyListView.ItemsSource = Biblioteka.Autorzy;
-            //    DodajAutoraPopup.IsOpen = false;
-            //    DodajAutoraIdTextBox.Text = "";
-            //    DodajAutoraImięTextBox.Text = "";
-            //    DodajAutoraNazwiskoTextBox.Text = "";
-            //    DodajAutoraDataUrodzinDataPicker.SelectedDate = null;
-            //    DodajAutoraMiejsceUrodzeniaTextBox.Text = "";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
-            //    Biblioteka = XML.LoadData();
-            //}
+                XML.SaveData(Biblioteka);
+                Biblioteka = XML.LoadData();
+                AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+            }
+            else
+            {
+                MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+                Biblioteka = XML.LoadData();
+            }
         }
 
         private void UsuńAutoraButton_Click(object sender, RoutedEventArgs e)
@@ -176,7 +173,10 @@ namespace DomowaBiblioteka
                 if (XML.ValidateXmlSchema(Biblioteka))
                 {
                     Biblioteka.Autorzy.Remove(autor);
+
                     XML.SaveData(Biblioteka);
+                    Biblioteka = XML.LoadData();
+                    AutorzyListView.ItemsSource = Biblioteka.Autorzy;
                 }
                 else
                 {
@@ -221,7 +221,7 @@ namespace DomowaBiblioteka
                 Autor = DodajKsiążkęIdAutoraTextBox.Text,
                 Gatunek = gatunekKsiążki,
                 DataWydania = DodajKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                RodzajOkładki = DodajKsiążkęRodzajOkładkiComboBox.Text,
+                Okładka = new RodzajOkładki() { Okładka = DodajKsiążkęRodzajOkładkiComboBox.Text },
                 KosztKsiążki = new Zad5.Model.Cena
                 {
                     Wartość = DodajKsiążkęCenaTextBox.Text,
@@ -231,10 +231,11 @@ namespace DomowaBiblioteka
 
             if (XML.ValidateXmlSchema(Biblioteka))
             {
-                XML.SaveData(Biblioteka);
-                KsiążkiListView.ItemsSource = Biblioteka.Książki;
                 DodajKsiążkęPopup.IsOpen = false;
 
+                XML.SaveData(Biblioteka);
+                Biblioteka = XML.LoadData();
+                KsiążkiListView.ItemsSource = Biblioteka.Książki;
             }
             else
             {
@@ -264,7 +265,41 @@ namespace DomowaBiblioteka
 
         private void ZastosujEdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
         {
+            string gatunekKsiążki;
+            if (DodajKsiążkęGatunekComboBox.Text == "Dla_dzieci") gatunekKsiążki = "Dla dzieci";
+            else gatunekKsiążki = DodajKsiążkęGatunekComboBox.Text;
 
+            Książka książka = Biblioteka.Książki.Find(k => k.IdKsiążki == DodajKsiążkęIdTextBox.Text);
+            książka.IdKsiążki = DodajKsiążkęIdTextBox.Text;
+            książka.Tytuł = DodajKsiążkęTytułTextBox.Text;
+            książka.Autor = DodajKsiążkęIdAutoraTextBox.Text;
+            książka.Gatunek = gatunekKsiążki;
+            książka.DataWydania = DodajKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+            książka.Okładka.Okładka = DodajKsiążkęRodzajOkładkiComboBox.Text;
+            książka.KosztKsiążki = new Zad5.Model.Cena
+            {
+                Wartość = DodajKsiążkęCenaTextBox.Text,
+                Waluta = DodajKsiążkęWalutaComboBox.Text
+            };
+
+            if (XML.ValidateXmlSchema(Biblioteka))
+            {
+                EdytujAutoraPopup.IsOpen = false;
+                EdytujAutoraIdTextBox.Text = "";
+                EdytujAutoraImięTextBox.Text = "";
+                EdytujAutoraNazwiskoTextBox.Text = "";
+                EdytujAutoraDataUrodzeniaDatePicker.SelectedDate = null;
+                EdytujAutoraMiejsceUrodzeniaTextBox.Text = "";
+
+                XML.SaveData(Biblioteka);
+                Biblioteka = XML.LoadData();
+                KsiążkiListView.ItemsSource = Biblioteka.Książki;
+            }
+            else
+            {
+                MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+                Biblioteka = XML.LoadData();
+            }
         }
 
         private void UsuńKsiążkęButton_Click(object sender, RoutedEventArgs e)
@@ -277,7 +312,10 @@ namespace DomowaBiblioteka
                 if (XML.ValidateXmlSchema(Biblioteka))
                 {
                     Biblioteka.Książki.Remove(książka);
+
                     XML.SaveData(Biblioteka);
+                    Biblioteka = XML.LoadData();
+                    KsiążkiListView.ItemsSource = Biblioteka.Książki;
                 }
                 else
                 {
@@ -291,146 +329,5 @@ namespace DomowaBiblioteka
         #region Wczytywanie i zapisywanie
 
         #endregion
-
-
-        //private void Kliknięcie(object sender, MouseButtonEventArgs e)
-        //{
-        //    ListBox tmp = (ListBox)sender;
-        //    Książka element = (Książka)tmp.SelectedItem;
-        //    MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć książkę " + element.Tytuł + "?", "Usuwanie", MessageBoxButton.YesNo);
-        //    if (result == MessageBoxResult.Yes)
-        //    {
-        //        Biblioteka.Książki.RemoveAll(x => x.IdKsiążki == element.IdKsiążki);
-        //        if (XML.ValidateXmlSchema(Biblioteka))
-        //        {
-        //            Biblioteka.Książki.Remove(element);
-        //            XML.SaveData(Biblioteka);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Edycja danych niezgodna z XML Schema!", "Błąd!");
-        //            Biblioteka = XML.LoadData();
-        //        }
-        //    }
-        //}
-
-        //private void Dodawanie(object sender, RoutedEventArgs e)
-        //{
-        //    string login = string.Empty;
-
-        //    try
-        //    {
-        //        //login = WalutaBox.Text.Substring(0, 2) + ImieBox.Text.Substring(0, 2).ToUpper() + NazwiskoBox.Text.Substring(0, 3).ToUpper();
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("Za krótkie imię lub nazwisko!", "Błąd!");
-        //        return;
-
-        //    }
-
-
-        //    login = ProcessLogin(login);
-        //    if (login == string.Empty) return;
-
-        //    Biblioteka.ListaOsóbList.FirstOrDefault().OsobaList.Add(new Osoba()
-        //    {
-        //        Imie = ImieBox.Text,
-        //        Nazwisko = NazwiskoBox.Text,
-        //        Login = login
-        //    });
-        //    Zatrudnienie zatrudnienie = new Zatrudnienie()
-        //    {
-        //        IdOsoby = login,
-        //        Imie = ImieBox.Text,
-        //        Nazwisko = NazwiskoBox.Text
-        //    };
-
-        //    zatrudnienie.StanowiskoList = new List<string>();
-        //    zatrudnienie.PlacaList = new List<Placa>();
-        //    zatrudnienie.EtatList = new List<Etat>();
-        //    zatrudnienie.DataZatrudnieniaList = new List<string>();
-
-        //    zatrudnienie.StanowiskoList.Add(StanowiskoBox.Text);
-        //    zatrudnienie.PlacaList.Add(new Placa() { Waluta = WalutaBox.Text, XValue = PlacaBox.Text });
-        //    zatrudnienie.EtatList.Add(new Etat() { RodzajUmowy = UmowaBox.Text });
-        //    zatrudnienie.DataZatrudnieniaList.Add(ZatrudnienieBox.Text);
-
-        //    ZdefiniowanyDzial tmpDzial = (ZdefiniowanyDzial)DzialyBox.SelectedItem;
-        //    Biblioteka.DziałList.FirstOrDefault(x => x.IdDzialu == tmpDzial.Id).ZatrudnienieList.Add(zatrudnienie);
-
-        //    if (XML.ValidateXmlSchema(Biblioteka))
-        //    {
-        //        XML.SaveData(Biblioteka);
-        //        Pracownicy = new ToolsUI.Pracownicy(Biblioteka);
-        //        this.PracownicyListBox.DataContext = Pracownicy;
-        //        ImieBox.Text = NazwiskoBox.Text = StanowiskoBox.Text = WalutaBox.Text = PlacaBox.Text = UmowaBox.Text = ZatrudnienieBox.Text = String.Empty;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Edycja danych niezgodna z XML Schema!", "Błąd!");
-        //        Biblioteka = XML.LoadData();
-        //    }
-
-        //}
-
-        //private string ProcessLogin(string login)
-        //{
-        //    //if (Biblioteka.ListaOsóbList.FirstOrDefault().OsobaList.Any(element => element.Login == login))
-        //    //{
-        //    //    try
-        //    //    {
-        //    //        login = ProcessLogin(ChangeLogin(login));
-        //    //    }
-        //    //    catch (Exception)
-        //    //    {
-        //    //        MessageBox.Show("Nie można dodać pracownika.", "Błąd krytyczny");
-        //    //        login = String.Empty;
-        //    //    }
-        //    //}
-        //    return login;
-        //}
-
-        //private string ChangeLogin(string login)
-        //{
-        //    char last = login.Last();
-        //    switch (last)
-        //    {
-        //        case '0':
-        //            login = login.Substring(0, 6) + '1';
-        //            break;
-        //        case '1':
-        //            login = login.Substring(0, 6) + '2';
-        //            break;
-        //        case '2':
-        //            login = login.Substring(0, 6) + '3';
-        //            break;
-        //        case '3':
-        //            login = login.Substring(0, 6) + '4';
-        //            break;
-        //        case '4':
-        //            login = login.Substring(0, 6) + '5';
-        //            break;
-        //        case '5':
-        //            login = login.Substring(0, 6) + '6';
-        //            break;
-        //        case '6':
-        //            login = login.Substring(0, 6) + '7';
-        //            break;
-        //        case '7':
-        //            login = login.Substring(0, 6) + '8';
-        //            break;
-        //        case '8':
-        //            login = login.Substring(0, 6) + '9';
-        //            break;
-        //        case '9':
-        //            throw new Exception();
-        //        default:
-        //            login = login.Substring(0, 6) + '0';
-        //            break;
-        //    }
-
-        //    return login;
-        //}
     }
 }

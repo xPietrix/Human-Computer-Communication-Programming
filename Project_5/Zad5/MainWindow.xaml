@@ -110,9 +110,9 @@
                                 <GridViewColumn Width="auto" Header="Autor" DisplayMemberBinding="{Binding AutorKsiążki}"/>
                                 <GridViewColumn Width="auto" Header="Gatunek" DisplayMemberBinding="{Binding Gatunek}"/>
                                 <GridViewColumn Width="auto" Header="Data wydania" DisplayMemberBinding="{Binding DataWydania}"/>
-                                <GridViewColumn Width="auto" Header="Rodzaj okładki" DisplayMemberBinding="{Binding RodzajOkładki}"/>
-                                <GridViewColumn Width="auto" Header="Cena" DisplayMemberBinding="{Binding Cena}"/>
-                                <GridViewColumn Width="auto" Header="Waluta" DisplayMemberBinding="{Binding Waluta}"/>
+                                <GridViewColumn Width="auto" Header="Rodzaj okładki" DisplayMemberBinding="{Binding Okładka.Okładka}"/>
+                                <GridViewColumn Width="auto" Header="Cena" DisplayMemberBinding="{Binding KosztKsiążki.Wartość}"/>
+                                <GridViewColumn Width="auto" Header="Waluta" DisplayMemberBinding="{Binding KosztKsiążki.Waluta}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -211,21 +211,38 @@
                 </Grid>
             </TabItem>
             <TabItem Width="450" Visibility="Hidden"></TabItem>
-            <TabItem Header="Wczytywanie">
-
-            </TabItem>
-            <TabItem Header="Opis Dokumentu">
-                <Grid Background="#FFE5E5E5">
-                    <ListView Name="OpisListView" Margin="30">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding ImięAutora}"/>
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding NazwiskoAutora}"/>
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Indeks}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Grid>
+            <TabItem Header="Dokument">
+                <StackPanel Background="#FFE5E5E5">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tytuł:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
+                        <TextBox Name="TytułDokumentuTextBox" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" IsEnabled="False" Width="640"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Autorzy:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
+                        <ListView Name="OpisListView" Margin="130,0,0,0" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="100" Header="Imię studenta" DisplayMemberBinding="{Binding ImięAutora}"/>
+                                    <GridViewColumn Width="100" Header="Nazwisko studenta" DisplayMemberBinding="{Binding NazwiskoAutora}"/>
+                                    <GridViewColumn Width="100" Header="Indeks" DisplayMemberBinding="{Binding Indeks}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="XML:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
+                        <TextBox Name="XmlFileTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="XSD:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
+                        <TextBox Name="XmlSchemaFIleTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                        <Button Content="Załaduj" FontSize="18" Margin="10"/>
+                        <Button Content="Zapisz" FontSize="18" Margin="10" />
+                        <Button Content="Waliduj" FontSize="18" Margin="10" />
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>

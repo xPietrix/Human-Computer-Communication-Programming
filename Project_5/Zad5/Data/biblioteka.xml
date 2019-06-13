@@ -83,13 +83,7 @@
     <Autor Id="a12">
       <Imię>Ewa</Imię>
       <Nazwisko>Stachniak</Nazwisko>
-      <DataUrodzenia> 1952-11-27 </DataUrodzenia>
-      <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
-    </Autor>
-    <Autor Id="a13">
-      <Imię>Mateusz</Imię>
-      <Nazwisko>Kubicki</Nazwisko>
-      <DataUrodzenia>1997-07-05</DataUrodzenia>
+      <DataUrodzenia>1952-11-27</DataUrodzenia>
       <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
     </Autor>
   </AutorzyKsiążek>

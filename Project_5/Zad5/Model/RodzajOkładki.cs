@@ -6,7 +6,7 @@ namespace DomowaBiblioteka
     public class RodzajOkładki
     {
         [XmlAttribute("Rodzaj")]
-        public Rodzaj Okładka { get; set; }
+        public string Okładka { get; set; }
 
         public enum Rodzaj { Twarda, Miękka }
     }
