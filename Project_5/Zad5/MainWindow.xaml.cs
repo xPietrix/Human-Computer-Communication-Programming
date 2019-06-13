@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -12,7 +13,10 @@ namespace DomowaBiblioteka
     {
         public Biblioteka Biblioteka { get; set; }
         public XmlManager XML { get; set; }
-
+        public List<string> MożliweWaluty = new List<string>() { "PLN", "USD", "EUR" };
+        public List<string> MożliweGatunkiKsiążek = new List<string>() { "Fantasy", "Kryminał", "Obyczajowa", "Historyczna", "Biografia", "Dla dzieci" };
+        public List<string> MożliweRodzajeOkładek = new List<string>() { "Twarda", "Miękka" };
+        public List<string> MożliwiAutorzy = new List<string>();
 
         public MainWindow()
         {
@@ -22,15 +26,26 @@ namespace DomowaBiblioteka
             TabControl.Visibility = Visibility.Hidden;
             TabControl.SelectedIndex = 4;
 
-            //MessageBoxResult result = MessageBox.Show("Za chwilę nastąpi uruchomienie aplikacji...\n\nAutorzy:\nMateusz Kubicki (210238)\nPiotr Wasiak (210346)", "Otwieranie", MessageBoxButton.OK);
+            
 
             OpenApplication();
+            foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
+
             AutorzyListView.ItemsSource = Biblioteka.Autorzy;
             KsiążkiListView.ItemsSource = Biblioteka.Książki;
             TytułDokumentuTextBox.Text = Biblioteka.OpisDokumentu.Tytuł;
             OpisListView.ItemsSource = Biblioteka.OpisDokumentu.Autorzy;
             XmlFileTextBox.Text = XML.XmlFile.FullName;
             XmlSchemaFIleTextBox.Text = XML.SchemaFile.FullName;
+
+            WypełnijComboBox(DodajKsiążkęRodzajOkładkiComboBox, MożliweRodzajeOkładek);
+            WypełnijComboBox(EdytujKsiążkęRodzajZakładkiComboBox, MożliweRodzajeOkładek);
+            WypełnijComboBox(DodajKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
+            WypełnijComboBox(EdytujKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
+            WypełnijComboBox(DodajKsiążkęWalutaComboBox, MożliweWaluty);
+            WypełnijComboBox(EdytujKsiążkęWalutaComboBox, MożliweWaluty);
+            WypełnijComboBox(DodajKsiążkęIdAutoraComboBox, MożliwiAutorzy);
+            WypełnijComboBox(EdytujKsiążkęIdAutoraComboBox, MożliwiAutorzy);
         }
 
         private void OpenApplication()
@@ -46,6 +61,11 @@ namespace DomowaBiblioteka
                 TabControl.Visibility = Visibility.Visible;
                 MessageBox.Show("Pomyślnie wczytano plik " + XML.XmlFile.Name + ". \nDane zostały załadowane");
             }
+        }
+
+        private void WypełnijComboBox(ComboBox c, List<string> l)
+        {
+            foreach (string s in l) c.Items.Add(s);
         }
 
         private void KsiążkiListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -64,6 +84,8 @@ namespace DomowaBiblioteka
                 DodajAutoraPopup.Placement = PlacementMode.Right;
                 DodajAutoraPopup.AllowsTransparency = true;
                 DodajAutoraPopup.PopupAnimation = PopupAnimation.Fade;
+
+                DodajAutoraIdTextBox.Text = 'a' + (Biblioteka.Autorzy.Count + 1).ToString();
                 DodajAutoraPopup.IsOpen = true;
             }
         }
@@ -96,6 +118,9 @@ namespace DomowaBiblioteka
                 XML.SaveData(Biblioteka);
                 Biblioteka = XML.LoadData();
                 AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+
+                MożliwiAutorzy = new List<string>();
+                foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
             }
             else
             {
@@ -153,6 +178,9 @@ namespace DomowaBiblioteka
                 XML.SaveData(Biblioteka);
                 Biblioteka = XML.LoadData();
                 AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+
+                MożliwiAutorzy = new List<string>();
+                foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
             }
             else
             {
@@ -177,6 +205,10 @@ namespace DomowaBiblioteka
                     XML.SaveData(Biblioteka);
                     Biblioteka = XML.LoadData();
                     AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+
+                    MożliwiAutorzy = new List<string>();
+                    foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
+
                 }
                 else
                 {
@@ -199,6 +231,8 @@ namespace DomowaBiblioteka
                 DodajKsiążkęPopup.Placement = PlacementMode.Right;
                 DodajKsiążkęPopup.AllowsTransparency = true;
                 DodajKsiążkęPopup.PopupAnimation = PopupAnimation.Fade;
+                DodajKsiążkęIdTextBox.Text = 'k' + (Biblioteka.Książki.Count + 1).ToString();
+
                 DodajKsiążkęPopup.IsOpen = true;
             }
         }
@@ -210,16 +244,12 @@ namespace DomowaBiblioteka
 
         private void DodajDodajKsiążkęButton_Click(object sender, RoutedEventArgs e)
         {
-            string gatunekKsiążki;
-            if (DodajKsiążkęGatunekComboBox.Text == "Dla_dzieci") gatunekKsiążki = "Dla dzieci";
-            else gatunekKsiążki = DodajKsiążkęGatunekComboBox.Text;
-
             this.Biblioteka.Książki.Add(new Książka
             {
                 IdKsiążki = DodajKsiążkęIdTextBox.Text,
                 Tytuł = DodajKsiążkęTytułTextBox.Text,
-                Autor = DodajKsiążkęIdAutoraTextBox.Text,
-                Gatunek = gatunekKsiążki,
+                Autor = DodajKsiążkęIdAutoraComboBox.Text,
+                Gatunek = DodajKsiążkęGatunekComboBox.Text,
                 DataWydania = DodajKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
                 Okładka = new RodzajOkładki() { Okładka = DodajKsiążkęRodzajOkładkiComboBox.Text },
                 KosztKsiążki = new Zad5.Model.Cena
@@ -265,21 +295,19 @@ namespace DomowaBiblioteka
 
         private void ZastosujEdytujKsiążkęButton_Click(object sender, RoutedEventArgs e)
         {
-            string gatunekKsiążki;
-            if (DodajKsiążkęGatunekComboBox.Text == "Dla_dzieci") gatunekKsiążki = "Dla dzieci";
-            else gatunekKsiążki = DodajKsiążkęGatunekComboBox.Text;
+            Książka WybranaKsiążka = (Książka)KsiążkiListView.SelectedItem;
+            Książka książka = Biblioteka.Książki.Find(k => k.IdKsiążki == WybranaKsiążka.IdKsiążki);
 
-            Książka książka = Biblioteka.Książki.Find(k => k.IdKsiążki == DodajKsiążkęIdTextBox.Text);
-            książka.IdKsiążki = DodajKsiążkęIdTextBox.Text;
-            książka.Tytuł = DodajKsiążkęTytułTextBox.Text;
-            książka.Autor = DodajKsiążkęIdAutoraTextBox.Text;
-            książka.Gatunek = gatunekKsiążki;
-            książka.DataWydania = DodajKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
-            książka.Okładka.Okładka = DodajKsiążkęRodzajOkładkiComboBox.Text;
+            książka.IdKsiążki = EdytujKsiążkęIdTextBox.Text;
+            książka.Tytuł = EdytujKsiążkęTytułTextBox.Text;
+            książka.Autor = EdytujKsiążkęIdAutoraComboBox.Text;
+            książka.Gatunek = EdytujKsiążkęGatunekComboBox.Text;
+            książka.DataWydania = EdytujKsiążkęDataWydaniaDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+            książka.Okładka.Okładka = EdytujKsiążkęRodzajZakładkiComboBox.Text;
             książka.KosztKsiążki = new Zad5.Model.Cena
             {
-                Wartość = DodajKsiążkęCenaTextBox.Text,
-                Waluta = DodajKsiążkęWalutaComboBox.Text
+                Wartość = EdytujKsiążkęCenaTextBox.Text,
+                Waluta = EdytujKsiążkęWalutaComboBox.Text
             };
 
             if (XML.ValidateXmlSchema(Biblioteka))

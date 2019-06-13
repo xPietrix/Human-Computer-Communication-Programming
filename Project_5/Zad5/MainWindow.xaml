@@ -36,7 +36,7 @@
                                     <StackPanel Orientation="Vertical">
                                         <Grid Margin="5">
                                             <TextBlock Text="Id:" Margin="10,5,10,5"/>
-                                            <TextBox Name="DodajAutoraIdTextBox" HorizontalAlignment="Right" Width="200"/>
+                                            <TextBox Name="DodajAutoraIdTextBox" HorizontalAlignment="Right" Width="200" IsEnabled="False"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Imię: " Margin="10,5,10,5"/>
@@ -70,7 +70,7 @@
                                     <StackPanel Orientation="Vertical">
                                         <Grid Margin="5">
                                             <TextBlock Text="Id:" Margin="10,5,10,5"/>
-                                            <TextBox Name="EdytujAutoraIdTextBox" HorizontalAlignment="Right" Width="200"/>
+                                            <TextBox Name="EdytujAutoraIdTextBox" HorizontalAlignment="Right" Width="200" IsEnabled="False"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Imię: " Margin="10,5,10,5"/>
@@ -127,7 +127,7 @@
                                     <StackPanel Orientation="Vertical">
                                         <Grid Margin="5">
                                             <TextBlock Text="Id:" Margin="10,5,10,5"/>
-                                            <TextBox Name="DodajKsiążkęIdTextBox"  HorizontalAlignment="Right" Width="200"/>
+                                            <TextBox Name="DodajKsiążkęIdTextBox"  HorizontalAlignment="Right" Width="200" IsEnabled="False"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Tytuł:" Margin="10,5,10,5"/>
@@ -135,7 +135,7 @@
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Id autora:" Margin="10,5,10,5"/>
-                                            <TextBox Name="DodajKsiążkęIdAutoraTextBox" HorizontalAlignment="Right" Width="200"/>
+                                            <ComboBox Name="DodajKsiążkęIdAutoraComboBox" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Gatunek: " Margin="10,5,10,5"/>
@@ -171,33 +171,33 @@
                                     <StackPanel Orientation="Vertical">
                                         <Grid Margin="5">
                                             <TextBlock Text="Id:" Margin="10,5,10,5"/>
-                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                            <TextBox Name="EdytujKsiążkęIdTextBox" HorizontalAlignment="Right" Width="200" IsEnabled="False"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Tytuł:" Margin="10,5,10,5"/>
-                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                            <TextBox Name="EdytujKsiążkęTytułTextBox" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Id autora:" Margin="10,5,10,5"/>
-                                            <TextBox HorizontalAlignment="Right" Width="200"/>
+                                            <ComboBox Name="EdytujKsiążkęIdAutoraComboBox" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Gatunek: " Margin="10,5,10,5"/>
-                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                            <ComboBox Name="EdytujKsiążkęGatunekComboBox" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Data wydania:" Margin="10,5,10,5"/>
-                                            <DatePicker Text="Test" HorizontalAlignment="Right" Width="200"/>
+                                            <DatePicker Name="EdytujKsiążkęDataWydaniaDatePicker" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Rodzaj okładki:" Margin="10,5,10,5"/>
-                                            <ComboBox HorizontalAlignment="Right" Width="200"/>
+                                            <ComboBox Name="EdytujKsiążkęRodzajZakładkiComboBox" HorizontalAlignment="Right" Width="200"/>
                                         </Grid>
                                         <Grid Margin="5">
                                             <TextBlock Text="Cena:" Margin="10,5,10,5"/>
-                                            <TextBox HorizontalAlignment="Right" Margin="0,0,175,0" Width="80"/>
+                                            <TextBox Name="EdytujKsiążkęCenaTextBox" HorizontalAlignment="Right" Margin="0,0,175,0" Width="80"/>
                                             <TextBlock Text="Waluta:" Margin="175,5,10,5"/>
-                                            <ComboBox HorizontalAlignment="Right" Width="80"/>
+                                            <ComboBox Name="EdytujKsiążkęWalutaComboBox" HorizontalAlignment="Right" Width="80"/>
                                         </Grid>
                                         <StackPanel Orientation="Horizontal">
                                             <Button Name="ZastosujEdytujKsiążkęButton" Content="Zastosuj" HorizontalAlignment="Center" Width="75" Margin="155,5,0,5" RenderTransformOrigin="0.48,-0.1" Click="ZastosujEdytujKsiążkęButton_Click"/>
