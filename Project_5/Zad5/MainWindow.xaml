@@ -11,10 +11,10 @@
             <TabItem Header="Autorzy">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView Name="AutorzyListView" Margin="10,10,100,10" Grid.ColumnSpan="2">
+                    <ListView Name="AutorzyListView" Margin="10,10,10,10" Grid.Column="0">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="auto" Header="Id" DisplayMemberBinding="{Binding ID}"/>
@@ -25,9 +25,9 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Name="UsuńAutoraButton" Content="Usuń" HorizontalAlignment="Center" Margin="635,0,10,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńAutoraButton_Click" Grid.Column="1"/>
-                    <Button Name="EdytujAutoraButton" Content="Edytuj" HorizontalAlignment="Center" Margin="635,0,10,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujAutoraButton_Click" Grid.Column="1"/>
-                    <Button Name="DodajAutoraButton" Content="Dodaj" HorizontalAlignment="Center" Margin="635,0,10,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="UsuńAutoraButton" Content="Usuń" HorizontalAlignment="Center" Margin="0,0,0,60" VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="EdytujAutoraButton" Content="Edytuj" HorizontalAlignment="Center" Margin="0,0,0,120" VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="DodajAutoraButton" Content="Dodaj" HorizontalAlignment="Center" Margin="0,0,0,180" VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajAutoraButton_Click" Grid.Column="1"/>
 
                     <Popup StaysOpen="True"  Width="350" Height="230" Name="DodajAutoraPopup" Grid.Column="1" Margin="152,80,218,81">
                         <Popup.Child>
@@ -101,7 +101,11 @@
             </TabItem>
             <TabItem Header="Książki">
                 <Grid Background="#FFE5E5E5">
-                    <ListView Name="KsiążkiListView" Margin="10,10,100,10" SelectionChanged="KsiążkiListView_SelectionChanged">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Name="KsiążkiListView" Margin="10,10,10,10" SelectionChanged="KsiążkiListView_SelectionChanged" Grid.Column="0">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="auto" Header="Id" DisplayMemberBinding="{Binding IdKsiążki}"/>
@@ -116,9 +120,9 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Name="UsuńKsiążkęButton" Content="Usuń" HorizontalAlignment="Left" Margin="701,0,0,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńKsiążkęButton_Click"/>
-                    <Button Name="EdytujKsiążkęButton" Content="Edytuj" HorizontalAlignment="Left" Margin="701,0,0,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujKsiążkęButton_Click"/>
-                    <Button Name="DodajKsiążkęButton"  Content="Dodaj" HorizontalAlignment="Left" Margin="701,0,0,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajKsiążkęButton_Click"/>
+                    <Button Name="UsuńKsiążkęButton" Content="Usuń" HorizontalAlignment="Center" Margin="0,0,0,60" VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńKsiążkęButton_Click" Grid.Column="1"/>
+                    <Button Name="EdytujKsiążkęButton" Content="Edytuj" HorizontalAlignment="Center" Margin="0,0,0,120"  VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujKsiążkęButton_Click" Grid.Column="1"/>
+                    <Button Name="DodajKsiążkęButton"  Content="Dodaj" HorizontalAlignment="Center" Margin="0,00,0,180"  VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajKsiążkęButton_Click" Grid.Column="1"/>
 
                     <Popup StaysOpen="True" Width="350" Name="DodajKsiążkęPopup">
                         <Popup.Child>

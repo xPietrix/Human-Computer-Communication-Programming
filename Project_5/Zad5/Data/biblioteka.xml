@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Biblioteka xmlns:typy="http://www.example.org/typy">
+<Biblioteka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <OpisDokumentu>
     <TytułDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki </TytułDokumentu>
     <Autorzy>
@@ -84,6 +84,12 @@
       <Imię>Ewa</Imię>
       <Nazwisko>Stachniak</Nazwisko>
       <DataUrodzenia>1952-11-27</DataUrodzenia>
+      <MiejsceUrodzenia>Polskaa</MiejsceUrodzenia>
+    </Autor>
+    <Autor Id="a13">
+      <Imię>Mateusz</Imię>
+      <Nazwisko>Kubicki</Nazwisko>
+      <DataUrodzenia>1997-07-05</DataUrodzenia>
       <MiejsceUrodzenia>Polska</MiejsceUrodzenia>
     </Autor>
   </AutorzyKsiążek>

@@ -24,7 +24,7 @@ namespace DomowaBiblioteka
             Biblioteka = new Biblioteka();
             XML = new XmlManager(@"../../Data/biblioteka.xml", @"../../Data/biblioteka.xsd", @"../../Data/txt.xsl", @"../../Data/txt.txt");
 
-            TabControl.SelectedIndex = 1;
+            TabControl.SelectedIndex = 3;
 
             OpenApplication();
         }
