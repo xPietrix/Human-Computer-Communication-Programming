@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace DomowaBiblioteka
 {
-    [XmlRoot("Biblioteka")]
+    [XmlRoot("Biblioteka", Namespace = "http://www.example.org/typy")]
     public class Biblioteka
     {
         [XmlElement("OpisDokumentu")]

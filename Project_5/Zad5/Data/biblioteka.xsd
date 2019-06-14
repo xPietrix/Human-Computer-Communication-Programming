@@ -24,8 +24,9 @@
 			<xsd:element name="OpisDokumentu" type="typ:t_OpisDokumentu" /> 
 			<xsd:element name="AutorzyKsiążek" type="typ:t_AutorzyKsiążek"/>
 			<xsd:element name="ListaKsiążek" type="typ:t_Książki"/>
-		</xsd:sequence> 
-	</xsd:complexType>
+		</xsd:sequence>
+    <xsd:attribute name="typy"/>
+  </xsd:complexType>
 			
 	<xsd:complexType name="t_OpisDokumentu">
 		<xsd:sequence>

@@ -287,6 +287,18 @@ namespace DomowaBiblioteka
                 EdytujKsiążkęPopup.AllowsTransparency = true;
                 EdytujKsiążkęPopup.PopupAnimation = PopupAnimation.Fade;
                 EdytujKsiążkęPopup.IsOpen = true;
+
+                Książka książka = (Książka)KsiążkiListView.SelectedItem;
+
+                EdytujKsiążkęIdTextBox.Text = książka.IdKsiążki;
+                EdytujKsiążkęTytułTextBox.Text = książka.Tytuł;
+                EdytujKsiążkęIdAutoraComboBox.Text = książka.Autor;
+                EdytujKsiążkęGatunekComboBox.Text = książka.Gatunek;
+                EdytujKsiążkęDataWydaniaDatePicker.Text = książka.DataWydania;
+                EdytujKsiążkęRodzajZakładkiComboBox.Text = książka.Okładka.Okładka;
+                EdytujKsiążkęCenaTextBox.Text = książka.KosztKsiążki.Wartość;
+                EdytujKsiążkęWalutaComboBox.Text = książka.KosztKsiążki.Waluta;
+
             }
         }
 
