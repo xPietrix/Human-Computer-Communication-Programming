@@ -86,7 +86,7 @@ namespace DomowaBiblioteka
                 DodajAutoraPopup.AllowsTransparency = true;
                 DodajAutoraPopup.PopupAnimation = PopupAnimation.Fade;
 
-                DodajAutoraIdTextBox.Text = 'a' + (Biblioteka.Autorzy.Count + 1).ToString();
+                DodajAutoraIdTextBox.Text = 'a' + (int.Parse(Biblioteka.Autorzy[Biblioteka.Autorzy.Count - 1].ID.Substring(1)) + 1).ToString();
                 DodajAutoraPopup.IsOpen = true;
             }
         }
@@ -232,7 +232,8 @@ namespace DomowaBiblioteka
                 DodajKsiążkęPopup.Placement = PlacementMode.Right;
                 DodajKsiążkęPopup.AllowsTransparency = true;
                 DodajKsiążkęPopup.PopupAnimation = PopupAnimation.Fade;
-                DodajKsiążkęIdTextBox.Text = 'k' + (Biblioteka.Książki.Count + 1).ToString();
+
+                DodajKsiążkęIdTextBox.Text = 'k' + (int.Parse(Biblioteka.Książki[Biblioteka.Książki.Count - 1].IdKsiążki.Substring(1))+1).ToString();
 
                 DodajKsiążkęPopup.IsOpen = true;
             }
@@ -384,6 +385,7 @@ namespace DomowaBiblioteka
             XML.XsltFile = new System.IO.FileInfo(XsltFileTextBox.Text);
             XML.TxtFile = new System.IO.FileInfo(TxtFileTextBox.Text);
             XML.TransformXmlToTxt();
+            MessageBox.Show("Transformacja została zakonćzona.");
         }
         #endregion
 
