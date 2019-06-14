@@ -3,14 +3,14 @@ using System.Xml.Serialization;
 
 namespace DomowaBiblioteka
 {
-    [XmlRoot("OpisDokumentu", Namespace = "http://www.example.org/typy")]
+    [XmlRoot("OpisDokumentu")]
     public class OpisDokumentu
     {
-        [XmlElement("TytułDokumentu", Namespace = "http://www.example.org/typy")]
+        [XmlElement("TytułDokumentu")]
         public string Tytuł { get; set; }
 
-        [XmlArray("Autorzy", Namespace = "http://www.example.org/typy")]
-        [XmlArrayItem("AutorDokumentu", Namespace = "http://www.example.org/typy")]
+        [XmlArray("Autorzy")]
+        [XmlArrayItem("AutorDokumentu")]
         public List<AutorDokumentu> Autorzy { get; set; }
     }
 }

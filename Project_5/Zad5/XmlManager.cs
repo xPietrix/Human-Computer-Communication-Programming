@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.Xml.XPath;
+using System.Xml.Xsl;
 
 namespace DomowaBiblioteka
 {
@@ -10,12 +13,16 @@ namespace DomowaBiblioteka
     {
         public FileInfo XmlFile { get; set; }
         public FileInfo SchemaFile { get; set; }
-        XmlSerializer Serializer { get; set; }
+        public FileInfo XsltFile { get; set; }
+        public FileInfo TxtFile { get; set; }
+        private XmlSerializer Serializer { get; set; }
 
-        public XmlManager(string xmlFile, string schemaFile)
+        public XmlManager(string xmlFile, string schemaFile, string xsltFile, string txtFile)
         {
             XmlFile = new FileInfo(xmlFile);
             SchemaFile = new FileInfo(schemaFile);
+            XsltFile = new FileInfo(xsltFile);
+            TxtFile = new FileInfo(txtFile);
             Serializer = new XmlSerializer(typeof(Biblioteka));
         }
 
@@ -29,8 +36,6 @@ namespace DomowaBiblioteka
                     biblioteka = (Biblioteka)Serializer.Deserialize(textReader);
                     textReader.Close();
                 }
-                //foreach (AutorKsiążki a in biblioteka.Autorzy) a.Książki.AddRange(biblioteka.Książki.FindAll(k => k.Autor == a.ID));
-                //foreach (Książka k in biblioteka.Książki) k.AutorKsiążki = biblioteka.Autorzy.Find(a => a.ID == k.Autor);
             }
             else throw new IOException();
 
@@ -79,6 +84,35 @@ namespace DomowaBiblioteka
         private void ValidationCallBack(object sender, ValidationEventArgs e)
         {
             throw new Exception();
+        }
+
+        public void TransformXmlToTxt()
+        {
+            // reading source and transformation file
+            XmlDocument sourceXmlDocument = new XmlDocument();
+            sourceXmlDocument.Load(XmlFile.FullName);
+            string test = "";
+            using (TextReader textReader = new StreamReader(XsltFile.FullName))
+            {
+                test = textReader.ReadToEnd();
+            }
+
+            XmlUrlResolver resolver = new XmlUrlResolver();
+            resolver.Credentials = CredentialCache.DefaultCredentials;
+
+            XslCompiledTransform transformer = new XslCompiledTransform();
+            transformer.Load(new XPathDocument(XsltFile.FullName), XsltSettings.Default, resolver);
+
+
+            MemoryStream outputStream = new MemoryStream();
+            XmlWriter xmlWriter = XmlWriter.Create(outputStream, transformer.OutputSettings);
+            transformer.Transform(sourceXmlDocument, null, xmlWriter);
+            outputStream.Position = 0;
+            StreamReader streamReader = new StreamReader(outputStream);
+            using (TextWriter textWriter = new StreamWriter(TxtFile.FullName))
+            {
+                textWriter.Write(streamReader.ReadToEnd());
+            }
         }
     }
 }

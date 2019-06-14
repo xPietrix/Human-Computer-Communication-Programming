@@ -2,7 +2,7 @@
 
 namespace DomowaBiblioteka
 {
-    [XmlRoot("AutorDokumentu", Namespace = "http://www.example.org/typy")]
+    [XmlRoot("AutorDokumentu")]
     public class AutorDokumentu
     {
         [XmlAttribute]

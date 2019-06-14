@@ -1,0 +1,226 @@
+RAPORT W FORMACIE TXT 
+
+Zestawienie książek z domowej biblioteki 
+ 
+AUTORZY DOKUMENTU: 
+ 
+Piotr Wasiak 210346
+Mateusz Kubicki 210238
+
+ 
+AUTORZY KSIĄŻEK:
+
+Imię: 	 	 	 	J. K.
+Nazwisko: 	 	 	Rowling
+Data urodzenia: 	2004-01-31
+Miejsce urodzenia: 	Wielka Brytania
+ 
+Imię: 	 	 	 	Peter
+Nazwisko: 	 	 	Brett
+Data urodzenia: 	1973-02-08
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	Christopher
+Nazwisko: 	 	 	Paolini Testowy
+Data urodzenia: 	1983-11-17
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	Jo
+Nazwisko: 	 	 	Nesbo-Myślnikowy
+Data urodzenia: 	1960-03-29
+Miejsce urodzenia: 	Norwegia
+ 
+Imię: 	 	 	 	Camilla
+Nazwisko: 	 	 	Lackberg
+Data urodzenia: 	1974-07-30
+Miejsce urodzenia: 	Szwecja
+ 
+Imię: 	 	 	 	Remigiusz
+Nazwisko: 	 	 	Mróz
+Data urodzenia: 	 1987-01-15 
+Miejsce urodzenia: 	Polska
+ 
+Imię: 	 	 	 	Joyo
+Nazwisko: 	 	 	Moyes
+Data urodzenia: 	 1969-08-04 
+Miejsce urodzenia: 	Wielka Brytania
+ 
+Imię: 	 	 	 	Kennedy
+Nazwisko: 	 	 	Elle
+Data urodzenia: 	1982-01-19
+Miejsce urodzenia: 	Kanada
+ 
+Imię: 	 	 	 	Meghan
+Nazwisko: 	 	 	March
+Data urodzenia: 	 1983-04-15 
+Miejsce urodzenia: 	USA
+ 
+Imię: 	 	 	 	Henryk
+Nazwisko: 	 	 	Sienkiewicz
+Data urodzenia: 	 1846-05-05 
+Miejsce urodzenia: 	Polska
+ 
+Imię: 	 	 	 	Alexandre
+Nazwisko: 	 	 	Dumas
+Data urodzenia: 	 1802-07-24 
+Miejsce urodzenia: 	Francja
+ 
+Imię: 	 	 	 	Ewa
+Nazwisko: 	 	 	Stachniak
+Data urodzenia: 	1952-11-27
+Miejsce urodzenia: 	Polska
+ 
+LISTA KSIĄŻEK: 
+ 
+Tytuł: 	 	 	 	 Harry Potter I Czara Ognia
+Autor: 	 	 	 	 a1
+Data wydania: 	 	 2000-07-08 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 12.89 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Harry Potter I Zakon Feniksa
+Autor: 	 	 	 	 a1
+Data wydania: 	 	 2005-01-31 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 29.99 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Malowany Człowiek
+Autor: 	 	 	 	 a2
+Data wydania: 	 	 2008-09-01 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 42.49 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pustynna Włócznia
+Autor: 	 	 	 	 a2
+Data wydania: 	 	 2010-03-27 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 12.89 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Eragon
+Autor: 	 	 	 	 a3
+Data wydania: 	 	 2005-02-13 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 9.99 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Brisingr
+Autor: 	 	 	 	 a3
+Data wydania: 	 	 2008-09-20 
+Gatunek: 	 	 	 Fantasy
+Cena: 	 	 	 	 29.69 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Pierwszy śnieg
+Autor: 	 	 	 	 a4
+Data wydania: 	 	 2014-06-04 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 13.89 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pragnienie
+Autor: 	 	 	 	 a4
+Data wydania: 	 	 2017-03-29 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 34.00 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Księżniczka Z Lodu
+Autor: 	 	 	 	 a5
+Data wydania: 	 	 2011-09-07 
+Gatunek: 	 	 	 Kryminał
+Cena: 	 	 	 	 12.89 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Srebrna Zatoka
+Autor: 	 	 	 	 a7
+Data wydania: 	 	 2019-01-16 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 19.89 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Zanim się pojawiłeś
+Autor: 	 	 	 	 a7
+Data wydania: 	 	 2016-11-09 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 14.19 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pościg
+Autor: 	 	 	 	 a8
+Data wydania: 	 	 2019-03-04 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 11.79 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Błąd
+Autor: 	 	 	 	 a8
+Data wydania: 	 	 2016-07-04 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 12.89 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Król bez skrupułów
+Autor: 	 	 	 	 a9
+Data wydania: 	 	 2018-02-12 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 8.59 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pod tą maską
+Autor: 	 	 	 	 a9
+Data wydania: 	 	 2014-09-23 
+Gatunek: 	 	 	 Obyczajowa
+Cena: 	 	 	 	 9.89 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Krzyżacy
+Autor: 	 	 	 	 a10
+Data wydania: 	 	 2015-07-01 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 28.79 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Pan Wołodyjowski
+Autor: 	 	 	 	 a10
+Data wydania: 	 	 2010-04-03 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 23.88 
+Rodzaj okładki: 	 Miękka
+
+ 
+Tytuł: 	 	 	 	 Trzej muszkieterowie
+Autor: 	 	 	 	 a11
+Data wydania: 	 	 2016-02-12 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 11.39 
+Rodzaj okładki: 	 Twarda
+
+ 
+Tytuł: 	 	 	 	 Harry Potter i Czara Ognia
+Autor: 	 	 	 	 a12
+Data wydania: 	 	 2013-04-17 
+Gatunek: 	 	 	 Historyczna
+Cena: 	 	 	 	 28.89 
+Rodzaj okładki: 	 Twarda
+
+ 

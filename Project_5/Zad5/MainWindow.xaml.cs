@@ -22,30 +22,11 @@ namespace DomowaBiblioteka
         {
             InitializeComponent();
             Biblioteka = new Biblioteka();
-            XML = new XmlManager(@"../../Data/biblioteka.xml", @"../../Data/biblioteka.xsd");
-            TabControl.Visibility = Visibility.Hidden;
-            TabControl.SelectedIndex = 4;
+            XML = new XmlManager(@"../../Data/biblioteka.xml", @"../../Data/biblioteka.xsd", @"../../Data/txt.xsl", @"../../Data/txt.txt");
 
-            
+            TabControl.SelectedIndex = 1;
 
             OpenApplication();
-            foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
-
-            AutorzyListView.ItemsSource = Biblioteka.Autorzy;
-            KsiążkiListView.ItemsSource = Biblioteka.Książki;
-            TytułDokumentuTextBox.Text = Biblioteka.OpisDokumentu.Tytuł;
-            OpisListView.ItemsSource = Biblioteka.OpisDokumentu.Autorzy;
-            XmlFileTextBox.Text = XML.XmlFile.FullName;
-            XmlSchemaFIleTextBox.Text = XML.SchemaFile.FullName;
-
-            WypełnijComboBox(DodajKsiążkęRodzajOkładkiComboBox, MożliweRodzajeOkładek);
-            WypełnijComboBox(EdytujKsiążkęRodzajZakładkiComboBox, MożliweRodzajeOkładek);
-            WypełnijComboBox(DodajKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
-            WypełnijComboBox(EdytujKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
-            WypełnijComboBox(DodajKsiążkęWalutaComboBox, MożliweWaluty);
-            WypełnijComboBox(EdytujKsiążkęWalutaComboBox, MożliweWaluty);
-            WypełnijComboBox(DodajKsiążkęIdAutoraComboBox, MożliwiAutorzy);
-            WypełnijComboBox(EdytujKsiążkęIdAutoraComboBox, MożliwiAutorzy);
         }
 
         private void OpenApplication()
@@ -58,7 +39,27 @@ namespace DomowaBiblioteka
             else
             {
                 Biblioteka = XML.LoadData();
-                TabControl.Visibility = Visibility.Visible;
+
+                AutorzyListView.ItemsSource = Biblioteka.Autorzy;
+                KsiążkiListView.ItemsSource = Biblioteka.Książki;
+
+                TytułDokumentuTextBox.Text = Biblioteka.OpisDokumentu.Tytuł;
+                OpisListView.ItemsSource = Biblioteka.OpisDokumentu.Autorzy;
+                XmlFileTextBox.Text = XML.XmlFile.FullName;
+                XmlSchemaFileTextBox.Text = XML.SchemaFile.FullName;
+                XsltFileTextBox.Text = XML.XsltFile.FullName;
+                TxtFileTextBox.Text = XML.TxtFile.FullName;
+
+                foreach (AutorKsiążki a in Biblioteka.Autorzy) MożliwiAutorzy.Add(a.ID);
+                WypełnijComboBox(DodajKsiążkęRodzajOkładkiComboBox, MożliweRodzajeOkładek);
+                WypełnijComboBox(EdytujKsiążkęRodzajZakładkiComboBox, MożliweRodzajeOkładek);
+                WypełnijComboBox(DodajKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
+                WypełnijComboBox(EdytujKsiążkęGatunekComboBox, MożliweGatunkiKsiążek);
+                WypełnijComboBox(DodajKsiążkęWalutaComboBox, MożliweWaluty);
+                WypełnijComboBox(EdytujKsiążkęWalutaComboBox, MożliweWaluty);
+                WypełnijComboBox(DodajKsiążkęIdAutoraComboBox, MożliwiAutorzy);
+                WypełnijComboBox(EdytujKsiążkęIdAutoraComboBox, MożliwiAutorzy);
+
                 MessageBox.Show("Pomyślnie wczytano plik " + XML.XmlFile.Name + ". \nDane zostały załadowane");
             }
         }
@@ -354,8 +355,37 @@ namespace DomowaBiblioteka
         }
 
         #endregion
-        #region Wczytywanie i zapisywanie
 
+        #region Wczytywanie i zapisywanie
+        private void ZaładujXMLButton_Click(object sender, RoutedEventArgs e)
+        {
+            XML.XmlFile = new System.IO.FileInfo(XmlFileTextBox.Text);
+            OpenApplication();
+        }
+
+        private void ZapiszXMLButton_Click(object sender, RoutedEventArgs e)
+        {
+            XML.XmlFile = new System.IO.FileInfo(XmlFileTextBox.Text);
+            XML.SaveData(Biblioteka);
+            MessageBox.Show("Dane zostały zapisane pomyślnie w pliku " + XML.XmlFile.Name + ".");
+        }
+
+        private void WalidujXmlButton_Click(object sender, RoutedEventArgs e)
+        {
+            XML.XmlFile = new System.IO.FileInfo(XmlFileTextBox.Text);
+            XML.SchemaFile = new System.IO.FileInfo(XmlSchemaFileTextBox.Text);
+            XML.LoadData();
+            if(XML.ValidateXmlSchema(Biblioteka)) MessageBox.Show("Weryfikacja danych przebiegła pomyślnie. \nDane są zgodne z XML Schema.");
+            else MessageBox.Show("Dane niezgodne z XML Schema!", "Błąd!");
+        }
+
+        private void TransformujDoTxtButton_Click(object sender, RoutedEventArgs e)
+        {
+            XML.XsltFile = new System.IO.FileInfo(XsltFileTextBox.Text);
+            XML.TxtFile = new System.IO.FileInfo(TxtFileTextBox.Text);
+            XML.TransformXmlToTxt();
+        }
         #endregion
+
     }
 }

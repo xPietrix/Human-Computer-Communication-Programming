@@ -25,9 +25,9 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Name="UsuńAutoraButton" Content="Usuń" HorizontalAlignment="Left" Margin="635,0,0,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńAutoraButton_Click" Grid.Column="1"/>
-                    <Button Name="EdytujAutoraButton" Content="Edytuj" HorizontalAlignment="Left" Margin="635,0,0,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujAutoraButton_Click" Grid.Column="1"/>
-                    <Button Name="DodajAutoraButton" Content="Dodaj" HorizontalAlignment="Left" Margin="635,0,0,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="UsuńAutoraButton" Content="Usuń" HorizontalAlignment="Center" Margin="635,0,10,282" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="UsuńAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="EdytujAutoraButton" Content="Edytuj" HorizontalAlignment="Center" Margin="635,0,10,307" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="EdytujAutoraButton_Click" Grid.Column="1"/>
+                    <Button Name="DodajAutoraButton" Content="Dodaj" HorizontalAlignment="Center" Margin="635,0,10,332" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.48,-0.1" Click="DodajAutoraButton_Click" Grid.Column="1"/>
 
                     <Popup StaysOpen="True"  Width="350" Height="230" Name="DodajAutoraPopup" Grid.Column="1" Margin="152,80,218,81">
                         <Popup.Child>
@@ -230,17 +230,26 @@
                         </ListView>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="XML:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
+                        <TextBlock Text="XML:" FontSize="14" Margin="20,10,20,10" MinWidth="70"/>
                         <TextBox Name="XmlFileTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="XSD:" FontSize="18" Margin="20,20,20,20" MinWidth="70"/>
-                        <TextBox Name="XmlSchemaFIleTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
+                        <TextBlock Text="XSD:" FontSize="14" Margin="20,10,20,10" MinWidth="70"/>
+                        <TextBox Name="XmlSchemaFileTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="XSLT:" FontSize="14" Margin="20,10,20,10" MinWidth="70"/>
+                        <TextBox Name="XsltFileTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="TXT:" FontSize="14" Margin="20,10,20,10" MinWidth="70"/>
+                        <TextBox Name="TxtFileTextBox" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
-                        <Button Content="Załaduj" FontSize="18" Margin="10"/>
-                        <Button Content="Zapisz" FontSize="18" Margin="10" />
-                        <Button Content="Waliduj" FontSize="18" Margin="10" />
+                        <Button Name="ZaładujXMLButton" Content="Załaduj" FontSize="18" Margin="10" Padding="20,0,20,0" Click="ZaładujXMLButton_Click"/>
+                        <Button Name="ZapiszXMLButton" Content="Zapisz" FontSize="18" Margin="10" Padding="20,0,20,0" Click="ZapiszXMLButton_Click"/>
+                        <Button Name="WalidujXmlButton"  Content="Waliduj" FontSize="18" Margin="10" Padding="20,0,20,0" Click="WalidujXmlButton_Click"/>
+                        <Button Name="TransformujDoTxtButton" Content="Transformuj do TXT" FontSize="18" Margin="10" Padding="20,0,20,0" Click="TransformujDoTxtButton_Click"/>
                     </StackPanel>
                 </StackPanel>
             </TabItem>

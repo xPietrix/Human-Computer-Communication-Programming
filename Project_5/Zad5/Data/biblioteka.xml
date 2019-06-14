@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Biblioteka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org/typy">
+<Biblioteka xmlns:typy="http://www.example.org/typy">
   <OpisDokumentu>
     <TytułDokumentu> Dokument przedstawia zestawienie książek z domowej biblioteki </TytułDokumentu>
     <Autorzy>
@@ -140,12 +140,6 @@
       <Tytuł>Księżniczka Z Lodu</Tytuł>
       <DataWydania> 2011-09-07 </DataWydania>
       <Cena Waluta="USD"> 12.89 </Cena>
-      <RodzajOkładki Rodzaj="Twarda" />
-    </Książka>
-    <Książka IdKsiążki="k10" Autor="a6" Gatunek="Kryminał">
-      <Tytuł>Umorzenie</Tytuł>
-      <DataWydania> 2019-03-13 </DataWydania>
-      <Cena Waluta="EUR"> 29.89 </Cena>
       <RodzajOkładki Rodzaj="Twarda" />
     </Książka>
     <Książka IdKsiążki="k11" Autor="a7" Gatunek="Obyczajowa">
